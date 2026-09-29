@@ -1,14 +1,11 @@
-import { profile } from "../data/profile";
+import { copy, profile } from "../data/profile";
 export function Footer() {
   return (
     <footer className="footer">
       <div className="container footer-inner">
         <div>
           <a href="#home">{profile.name}</a>
-          <p>
-            Manufacturing · Production · Continuous Improvement · Operational
-            Leadership
-          </p>
+          <p>{copy.areas}</p>
         </div>
         <span>
           © {new Date().getFullYear()}

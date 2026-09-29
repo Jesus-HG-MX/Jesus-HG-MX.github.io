@@ -9,7 +9,7 @@ export function Hero() {
         src="/images/automotive-plant.avif"
         srcSet="/images/automotive-plant-mobile.avif 800w, /images/automotive-plant.avif 1800w"
         sizes="100vw"
-        alt="Automotive body assembly line with industrial robotic equipment"
+        alt="Línea de ensamblaje de carrocerías en una planta automotriz"
         width="1800"
         height="1200"
         fetchPriority="high"
@@ -19,7 +19,7 @@ export function Hero() {
         <div className="hero-copy">
           <p className="eyebrow">
             <span />
-            SENIOR PRODUCTION SUPERVISOR
+            SUPERVISOR SENIOR DE PRODUCCIÓN
           </p>
           <h1 id="hero-title" aria-label={profile.name}>
             JESÚS GABRIEL
@@ -31,7 +31,7 @@ export function Hero() {
             </span>
           </h1>
           <p className="hero-subtitle">
-            Manufacturing Leader <span>|</span> Industrial Engineer
+            Líder de Manufactura <span>|</span> Ingeniero Industrial
           </p>
           <p className="hero-description">{copy.intro}</p>
           <div className="hero-buttons">
@@ -47,7 +47,7 @@ export function Hero() {
               <Icon name="diagonal" size={15} />
             </a>
             <a className="text-button" href="#contact">
-              Contact
+              Contacto
               <Icon name="arrow" size={18} />
             </a>
           </div>
@@ -75,21 +75,25 @@ export function Hero() {
             +
           </span>
           <span>
-            AUTOMOTIVE MANUFACTURING
+            MANUFACTURA AUTOMOTRIZ
             <br />
-            <strong>Precision in every process.</strong>
+            <strong>Producción y mejora continua.</strong>
           </span>
         </div>
         <div className="hero-bottom">
           <a href="#profile">
-            EXPLORE MY PROFILE <span>↓</span>
+            CONOCE MI PERFIL <span>↓</span>
           </a>
           <div className="principles">
-            {["People", "Processes", "Productivity", "Safety", "Results"].map(
-              (x) => (
-                <span key={x}>{x}</span>
-              ),
-            )}
+            {[
+              "Personas",
+              "Procesos",
+              "Productividad",
+              "Seguridad",
+              "Resultados",
+            ].map((x) => (
+              <span key={x}>{x}</span>
+            ))}
           </div>
         </div>
       </div>

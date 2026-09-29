@@ -8,7 +8,7 @@ export function DownloadCV({
   return (
     <a className={className} href={profile.cv} download>
       <Icon name="download" size={17} />
-      Download CV
+      Descargar CV
     </a>
   );
 }

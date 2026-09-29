@@ -1,147 +1,180 @@
 import { siteConfig } from "../config/site";
-export type Locale = "en";
-export const defaultLocale: Locale = "en";
 export const profile = { ...siteConfig, title: siteConfig.role };
-export const content = {
-  en: {
-    nav: [
-      { label: "Home", id: "home" },
-      { label: "Experience", id: "experience" },
-      { label: "Skills", id: "skills" },
-      { label: "Highlights", id: "highlights" },
-      { label: "Education", id: "education" },
-      { label: "Contact", id: "contact" },
-    ],
-    intro:
-      "Industrial Engineer with 14+ years of experience in automotive manufacturing and industrial operations. Specialized in production leadership, Lean Manufacturing, continuous improvement, SAP, KPIs, quality and safety.",
-    about:
-      "Industrial Engineer with more than 14 years of experience in automotive manufacturing and industrial processes. Specialist in team leadership, unionized workforce management, Lean Manufacturing, continuous improvement, 5S, SAP, KPIs, production and inventory control.",
-    focus:
-      "Focused on productivity, quality, safety and the development of high-performance teams.",
-    statement:
-      "Committed to building safer, more efficient and people-centered manufacturing operations.",
-    contact:
-      "Open to opportunities in production supervision, manufacturing leadership, industrial operations and continuous improvement.",
-    experience: [
-      {
-        date: "2025 – 2026",
-        company: "INNOFA de México",
-        role: "Production Supervisor",
-        description: [
-          "Supervision of operations and follow-up on production targets.",
-          "Personnel management and monitoring of productivity, quality and safety indicators.",
-        ],
-        tags: ["Production", "People leadership"],
-      },
-      {
-        date: "2024 – 2025",
-        company: "La Josefina",
-        role: "Process Engineer",
-        description: [
-          "Analysis and improvement of industrial processes focused on efficiency and standardization.",
-          "Follow-up on indicators and continuous improvement opportunities.",
-        ],
-        tags: ["Process efficiency", "Standardization"],
-      },
-      {
-        date: "2021 – 2024",
-        company: "Tenneco",
-        role: "Manufacturing Leader",
-        description: [
-          "Leadership of automotive manufacturing operations and coordination of unionized personnel.",
-          "Management of KPIs, OEE, 5S, Kaizen and actions focused on reducing downtime.",
-        ],
-        tags: ["Automotive", "OEE & Kaizen"],
-      },
-      {
-        date: "2012 – 2021",
-        company: "Benteler de México",
-        role: "Line Leader",
-        description: [
-          "Coordination of production lines and follow-up on daily production plans.",
-          "Line balancing, standardized work, 5S, inventory management and problem resolution.",
-        ],
-        tags: ["Line leadership", "Production planning"],
-      },
-    ],
-    skills: [
-      {
-        title: "Production & Operations",
-        icon: "factory",
-        items: [
-          "Production Control",
-          "Line Balancing",
-          "Standardized Work",
-          "Inventory Management",
-          "SAP Production",
-        ],
-      },
-      {
-        title: "Lean Manufacturing",
-        icon: "cycle",
-        items: [
-          "Lean Manufacturing",
-          "5S",
-          "Kaizen",
-          "OEE",
-          "Continuous Improvement",
-        ],
-      },
-      {
-        title: "Leadership & People",
-        icon: "people",
-        items: [
-          "Personnel Management",
-          "Unionized Teams",
-          "Training & Development",
-          "High-Performance Teams",
-        ],
-      },
-      {
-        title: "Quality & Safety",
-        icon: "shield",
-        items: [
-          "Quality",
-          "Industrial Safety",
-          "KPI Management",
-          "Problem Solving",
-          "Operational Excellence",
-        ],
-      },
-    ],
-    highlights: [
-      {
-        title: "14+ Years in Manufacturing",
-        text: "Automotive and industrial production experience.",
-        icon: "factory",
-      },
-      {
-        title: "Tier 1 Automotive",
-        text: "Benteler · Tenneco · INNOFA",
-        icon: "gear",
-      },
-      {
-        title: "People Leadership",
-        text: "Experience coordinating manufacturing operations and unionized personnel.",
-        icon: "people",
-      },
-      {
-        title: "Operational Excellence",
-        text: "Lean Manufacturing · OEE · 5S · Kaizen · SAP · Productivity · Quality · Safety",
-        icon: "chart",
-      },
-    ],
-    certifications: [
-      "Lean Six Sigma Yellow Belt",
-      "ISO 9001:2015",
-      "Industrial Safety",
-      "Personnel Training",
-    ],
-    education: {
-      degree: "Industrial Engineering",
-      school: "Universidad de los Ángeles",
-      credential: "Professional Degree and License",
+export const copy = {
+  nav: [
+    { label: "Inicio", id: "home" },
+    { label: "Perfil", id: "profile" },
+    { label: "Experiencia", id: "experience" },
+    { label: "Competencias", id: "skills" },
+    { label: "Trayectoria", id: "highlights" },
+    { label: "Educación", id: "education" },
+    { label: "Contacto", id: "contact" },
+  ],
+  intro:
+    "Ingeniero Industrial con más de 14 años de experiencia en manufactura automotriz y procesos industriales. Especialista en liderazgo de equipos, Lean Manufacturing, mejora continua, SAP, KPIs, calidad y seguridad.",
+  about:
+    "Ingeniero Industrial con más de 14 años de experiencia en manufactura automotriz y procesos industriales. Especialista en liderazgo de equipos sindicalizados, Lean Manufacturing, mejora continua, 5S, SAP, KPIs, control de producción e inventarios.",
+  focus:
+    "Enfocado en productividad, calidad, seguridad y desarrollo de equipos de alto desempeño.",
+  statement:
+    "Comprometido con la construcción de operaciones de manufactura más seguras, eficientes y enfocadas en las personas.",
+  contact:
+    "Disponible para oportunidades en supervisión de producción, liderazgo de manufactura, operaciones industriales y mejora continua.",
+  areas: "Manufactura · Producción · Mejora Continua · Liderazgo Operativo",
+  metrics: [
+    {
+      value: "14+",
+      suffix: " AÑOS",
+      label: "Experiencia en manufactura",
+      icon: "factory",
     },
+    {
+      value: "TIER 1",
+      suffix: " AUTOMOTRIZ",
+      label: "Benteler · Tenneco · INNOFA",
+      icon: "gear",
+    },
+    {
+      value: ">90%",
+      suffix: "",
+      label: "Cumplimiento del plan de producción",
+      icon: "chart",
+    },
+    {
+      value: "LIDERAZGO",
+      suffix: " OPERATIVO",
+      label: "Producción · Calidad · Seguridad · Personas",
+      icon: "people",
+    },
+  ],
+  experience: [
+    {
+      date: "2025 – 2026",
+      company: "INNOFA de México",
+      role: "Supervisor de Producción",
+      description: [
+        "Supervisión de operaciones.",
+        "Seguimiento al cumplimiento de objetivos de producción.",
+        "Gestión de personal.",
+        "Seguimiento de indicadores de productividad.",
+        "Seguimiento de indicadores de calidad.",
+        "Seguimiento de indicadores de seguridad.",
+      ],
+      tags: ["Producción", "Gestión de personal"],
+    },
+    {
+      date: "2024 – 2025",
+      company: "La Josefina",
+      role: "Ingeniero de Procesos",
+      description: [
+        "Análisis de procesos industriales.",
+        "Mejora de procesos orientada a eficiencia.",
+        "Mejora de procesos orientada a estandarización.",
+        "Seguimiento de indicadores.",
+        "Identificación de oportunidades de mejora continua.",
+      ],
+      tags: ["Eficiencia", "Estandarización"],
+    },
+    {
+      date: "2021 – 2024",
+      company: "Tenneco",
+      role: "Líder de Manufactura",
+      description: [
+        "Liderazgo de operaciones de manufactura automotriz.",
+        "Coordinación de personal sindicalizado.",
+        "Gestión de KPIs.",
+        "Gestión de OEE.",
+        "Implementación y seguimiento de 5S.",
+        "Kaizen.",
+        "Acciones enfocadas en reducir tiempos muertos.",
+      ],
+      tags: ["Manufactura automotriz", "OEE · Kaizen"],
+    },
+    {
+      date: "2012 – 2021",
+      company: "Benteler de México",
+      role: "Líder de Línea",
+      description: [
+        "Coordinación de líneas de producción.",
+        "Seguimiento al cumplimiento de planes diarios.",
+        "Balanceo de líneas.",
+        "Trabajo estandarizado.",
+        "5S.",
+        "Control y seguimiento de inventarios.",
+        "Resolución de problemas.",
+      ],
+      tags: ["Producción", "Inventarios"],
+    },
+  ],
+  skills: [
+    {
+      title: "Producción y Operaciones",
+      icon: "factory",
+      items: [
+        "Control de Producción",
+        "Balanceo de Líneas",
+        "Trabajo Estandarizado",
+        "Inventarios",
+        "SAP Producción",
+      ],
+    },
+    {
+      title: "Lean Manufacturing",
+      icon: "cycle",
+      items: ["Lean Manufacturing", "5S", "Kaizen", "OEE", "Mejora Continua"],
+    },
+    {
+      title: "Liderazgo y Personas",
+      icon: "people",
+      items: [
+        "Gestión de Personal",
+        "Equipos Sindicalizados",
+        "Capacitación de Personal",
+        "Desarrollo de Equipos",
+      ],
+    },
+    {
+      title: "Calidad y Seguridad",
+      icon: "shield",
+      items: [
+        "Calidad",
+        "Seguridad Industrial",
+        "KPIs",
+        "Resolución de Problemas",
+      ],
+    },
+  ],
+  highlights: [
+    {
+      title: "14+ Años en Manufactura",
+      text: "Experiencia en manufactura automotriz y procesos industriales.",
+      icon: "factory",
+    },
+    {
+      title: "Experiencia Tier 1",
+      text: "Benteler · Tenneco · INNOFA",
+      icon: "gear",
+    },
+    {
+      title: "Liderazgo de Personas",
+      text: "Experiencia en coordinación de operaciones y personal sindicalizado.",
+      icon: "people",
+    },
+    {
+      title: "Excelencia Operativa",
+      text: "Lean Manufacturing · OEE · 5S · Kaizen · SAP · Productividad · Calidad · Seguridad",
+      icon: "chart",
+    },
+  ],
+  certifications: [
+    "Lean Six Sigma Yellow Belt",
+    "ISO 9001:2015",
+    "Seguridad Industrial",
+    "Capacitación de Personal",
+  ],
+  education: {
+    degree: "Ingeniería Industrial",
+    school: "Universidad de los Ángeles",
+    credential: "Título y Cédula Profesional",
   },
 };
-export const copy = content[defaultLocale];

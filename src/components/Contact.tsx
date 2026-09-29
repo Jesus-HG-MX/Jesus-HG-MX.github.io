@@ -8,16 +8,16 @@ export function Contact() {
         <div className="reveal">
           <p className="eyebrow">
             <span />
-            CONTACT
+            CONTACTO
           </p>
           <h2>
-            Let's Connect<span>.</span>
+            Conectemos<span>.</span>
           </h2>
           <p>{copy.contact}</p>
           <div className="contact-buttons">
             <a className="button primary" href={"mailto:" + profile.email}>
               <Icon name="mail" size={18} />
-              Email Me
+              Enviar correo
               <Icon name="diagonal" size={17} />
             </a>
             <a
@@ -36,21 +36,21 @@ export function Contact() {
           {[
             {
               icon: "mail",
-              label: "EMAIL",
+              label: "CORREO",
               value: profile.email,
               href: "mailto:" + profile.email,
             },
             {
               icon: "phone",
-              label: "PHONE",
+              label: "TELÉFONO",
               value: profile.phone,
               href: profile.phoneHref,
             },
-            { icon: "pin", label: "LOCATION", value: profile.location },
+            { icon: "pin", label: "UBICACIÓN", value: profile.location },
             {
               icon: "linkedin",
               label: "LINKEDIN",
-              value: "linkedin.com/in/gabriel8925",
+              value: profile.linkedin,
               href: profile.linkedin,
             },
           ].map((d) => (

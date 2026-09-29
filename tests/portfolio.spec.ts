@@ -16,6 +16,8 @@ for (const width of [360, 390, 430, 768, 1024, 1200, 1440]) {
       ),
     ).toBeTruthy();
     for (const id of [
+      "home",
+      "profile",
       "experience",
       "skills",
       "highlights",
@@ -23,25 +25,25 @@ for (const width of [360, 390, 430, 768, 1024, 1200, 1440]) {
       "contact",
     ]) {
       if (width <= 900)
-        await page.getByRole("button", { name: "Open navigation" }).click();
+        await page.getByRole("button", { name: "Abrir menú" }).click();
       await page
         .locator("#main-navigation")
-        .getByRole("link", { name: new RegExp("^" + id + "$", "i") })
+        .locator(`a[href="#${id}"]`)
         .click();
       await expect(page).toHaveURL(new RegExp("#" + id + "$"));
       await expect(page.locator("#" + id)).toBeInViewport();
     }
     if (width <= 900) {
-      await page.getByRole("button", { name: "Open navigation" }).click();
+      await page.getByRole("button", { name: "Abrir menú" }).click();
       await page.keyboard.press("Escape");
       await expect(
-        page.getByRole("button", { name: "Open navigation" }),
+        page.getByRole("button", { name: "Abrir menú" }),
       ).toBeFocused();
     }
     const downloadPromise = page.waitForEvent("download");
     await page
       .locator("#contact")
-      .getByRole("link", { name: "Download CV" })
+      .getByRole("link", { name: "Descargar CV" })
       .click();
     const download = await downloadPromise;
     expect(download.suggestedFilename()).toBe(
@@ -64,16 +66,32 @@ test("SEO, static content, links and reduced motion", async ({
 }) => {
   const response = await request.get("/");
   const html = await response.text();
-  expect(html).toContain("Professional Experience");
+  expect(html).toContain("Experiencia Profesional");
   expect(html).toContain("application/ld+json");
   await page.goto("/");
   await expect(page).toHaveTitle(
-    "Jesús Gabriel Hernández Gutiérrez | Senior Production Supervisor",
+    "Jesús Gabriel Hernández Gutiérrez | Supervisor Senior de Producción",
   );
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
     "href",
     "https://jesus-hg-mx.github.io/",
   );
+  await expect(page.locator("html")).toHaveAttribute("lang", "es");
+  await expect(page.locator(".languages")).toHaveCount(0);
+  await expect(page.getByText("En curso", { exact: true })).toBeVisible();
+  await expect(page.locator('meta[property="og:locale"]')).toHaveAttribute(
+    "content",
+    "es_MX",
+  );
+  const visibleCopy = await page.locator("body").innerText();
+  expect(visibleCopy).not.toMatch(
+    /Download CV|Senior Production Supervisor|In Progress|Professional Profile|Let's Connect|Coming soon/,
+  );
+  const schema = JSON.parse(
+    await page.locator('script[type="application/ld+json"]').innerText(),
+  );
+  expect(schema.jobTitle).toBe("Supervisor Senior de Producción");
+  expect(schema.sameAs).toEqual(["https://www.linkedin.com/in/gabriel8925/"]);
   const links = await page
     .locator("a")
     .evaluateAll((a) => a.map((x) => x.getAttribute("href")));
@@ -89,7 +107,7 @@ test("SEO, static content, links and reduced motion", async ({
   );
   expect(links).toContain("mailto:gabon1250@gmail.com");
   expect(links).toContain("tel:+522212690680");
-  expect(links).toContain("https://linkedin.com/in/gabriel8925");
+  expect(links).toContain("https://www.linkedin.com/in/gabriel8925/");
   for (const path of [
     "/robots.txt",
     "/sitemap.xml",
@@ -110,7 +128,7 @@ test("SEO, static content, links and reduced motion", async ({
   const staticPage = await context.newPage();
   await staticPage.goto("http://localhost:4175");
   await expect(
-    staticPage.getByRole("heading", { name: "Professional Experience" }),
+    staticPage.getByRole("heading", { name: "Experiencia Profesional" }),
   ).toBeVisible();
   await context.close();
 });

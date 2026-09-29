@@ -27,15 +27,15 @@ const json = JSON.stringify({
     name: "Universidad de los Ángeles",
   },
   knowsAbout: [
-    "Automotive Manufacturing",
+    "Manufactura automotriz",
     "Lean Manufacturing",
-    "Production Operations",
-    "Continuous Improvement",
+    "Operaciones de producción",
+    "Mejora continua",
     "SAP",
     "OEE",
-    "People Leadership",
-    "Quality",
-    "Industrial Safety",
+    "Liderazgo de personas",
+    "Calidad",
+    "Seguridad Industrial",
   ],
 }).replace(/</g, "\\u003c");
 const fonts = readdirSync("dist/assets")
@@ -49,7 +49,7 @@ const fonts = readdirSync("dist/assets")
   .join("");
 const meta =
   fonts +
-  `<link rel="canonical" href="${url}"/><meta property="og:url" content="${url}"/><meta property="og:image" content="${url}images/social-card.png"/><meta name="twitter:title" content="${profile.name} | ${profile.title}"/><meta name="twitter:description" content="${siteConfig.description}"/><meta name="twitter:image" content="${url}images/social-card.png"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image:alt" content="Jesús Gabriel Hernández Gutiérrez — Senior Production Supervisor"/><script type="application/ld+json">${json}</script>`;
+  `<link rel="canonical" href="${url}"/><meta property="og:url" content="${url}"/><meta property="og:image" content="${url}images/social-card.png"/><meta name="twitter:title" content="${profile.name} | ${profile.title}"/><meta name="twitter:description" content="${siteConfig.description}"/><meta name="twitter:image" content="${url}images/social-card.png"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image:alt" content="Jesús Gabriel Hernández Gutiérrez — Supervisor Senior de Producción"/><script type="application/ld+json">${json}</script>`;
 let html = readFileSync("dist/index.html", "utf8");
 html = html
   .replace("<!--app-html-->", renderToString(<App />))

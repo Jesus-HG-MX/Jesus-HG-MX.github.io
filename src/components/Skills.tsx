@@ -6,8 +6,8 @@ export function Skills() {
     <section className="section skills" id="skills">
       <div className="container">
         <SectionTitle
-          eyebrow="EXPERTISE"
-          title="Core Competencies"
+          eyebrow="COMPETENCIAS"
+          title="Competencias Clave"
           number="02"
         />
         <div className="skills-grid">

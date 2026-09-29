@@ -6,8 +6,8 @@ export function Highlights() {
     <section className="section highlights" id="highlights">
       <div className="container">
         <SectionTitle
-          eyebrow="HIGHLIGHTS"
-          title="Career Highlights"
+          eyebrow="TRAYECTORIA"
+          title="Fortalezas Profesionales"
           number="03"
         />
         <div className="highlights-grid">

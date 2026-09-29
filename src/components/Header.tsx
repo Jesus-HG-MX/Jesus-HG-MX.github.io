@@ -47,7 +47,7 @@ export function Header() {
           className="menu-toggle"
           aria-expanded={open}
           aria-controls="main-navigation"
-          aria-label={open ? "Close navigation" : "Open navigation"}
+          aria-label={open ? "Cerrar menú" : "Abrir menú"}
           onClick={() => setOpen(!open)}
         >
           <Icon name={open ? "close" : "menu"} />
@@ -55,7 +55,7 @@ export function Header() {
         <nav
           id="main-navigation"
           className={open ? "navigation is-open" : "navigation"}
-          aria-label="Main navigation"
+          aria-label="Navegación principal"
         >
           {copy.nav.map((n) => (
             <a
@@ -69,19 +69,6 @@ export function Header() {
             </a>
           ))}
           <DownloadCV className="button header-cv" />
-          <div className="languages" aria-label="Language">
-            <span lang="en" aria-label="English, current language">
-              EN
-            </span>
-            <span aria-hidden="true">/</span>
-            <button
-              disabled
-              title="Spanish version coming soon"
-              aria-label="Spanish version coming soon"
-            >
-              ES
-            </button>
-          </div>
         </nav>
       </div>
     </header>

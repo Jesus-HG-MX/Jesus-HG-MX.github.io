@@ -1,36 +1,38 @@
-# Verification — 2026-09-29
+# Verificación de la actualización en español — 2026-09-29
 
-## Build and runtime
+## Implementación
 
-- `npm install` completed; the lockfile is included.
-- `npm run build` completed successfully, including TypeScript and static prerendering.
-- The production build also passed with Node **20.20.2**, matching the workflow's Node 20 configuration.
-- Vite production preview serves the root page and all public assets.
-- Vite explicitly uses `base: '/'`.
+Se actualizaron la información profesional, navegación, textos accesibles, metadatos, CV e imagen social al español, manteniendo React, Vite, TypeScript y el diseño industrial existente. Se retiró el selector de idiomas. LinkedIn usa `https://www.linkedin.com/in/gabriel8925/`.
 
-## Functional and visual checks
+Las responsabilidades, empresas, periodos y puestos corresponden a la fuente de verdad proporcionada. Yellow Belt aparece como **En curso**. El dato **>90%** no se atribuye a una empresa o periodo.
 
-**8 Playwright tests passed**, covering 360, 390, 430, 768, 1024, 1200 and 1440px widths. Checked horizontal overflow, one h1, anchor navigation, mobile menu, Escape focus, actual CV download, loaded images and browser errors/warnings. Desktop and 390px screenshots were reviewed. Highlights and skills use one column on mobile.
+## Comprobaciones
 
-Additional checks passed: email and telephone targets, supplied LinkedIn destination, favicon, canonical and Open Graph production URLs, sitemap, robots.txt, social image, Person JSON-LD, reduced motion, and prerendered content without JavaScript.
+- `npm run build`: correcto, incluida la comprobación TypeScript y el prerender.
+- Ocho pruebas Playwright aprobadas: 360, 390, 430, 768, 1024, 1200 y 1440 px, más comprobaciones de SEO y contenido estático.
+- Sin overflow horizontal, errores ni advertencias en la consola del navegador.
+- Navegación por anchors, menú móvil, cierre con Escape, foco, correo, teléfono, destino de LinkedIn y descarga real del CV verificados.
+- `lang="es"`, Open Graph `es_MX`, title, canonical, sitemap, robots, favicon, Person JSON-LD y LinkedIn de producción verificados.
+- Capturas desktop y 390 px revisadas; nombres y títulos sin cortes.
+- Axe WCAG 2/2.1 A/AA: cero infracciones detectadas en 390 y 1440 px. La revisión automatizada no sustituye una evaluación completa con tecnologías de asistencia.
+- CV en español: una página, renderizada mediante Quartz y revisada visualmente. El archivo de `dist/cv/` coincide con el recurso público.
+- Imagen social en español: 1200 × 630 px.
 
-**Axe WCAG 2/2.1 A/AA: zero detected violations** at 390 and 1440px. Automated checks do not replace a complete assistive-technology review.
+## Lighthouse móvil local, versión 13.5
 
-## Lighthouse 13.5 mobile — local production build
+| Categoría        | Resultado |
+| ---------------- | --------- |
+| Rendimiento      | 96        |
+| Accesibilidad    | 100       |
+| Buenas prácticas | 100       |
+| SEO              | 100       |
 
-| Category       | Score |
-| -------------- | ----- |
-| Performance    | 97    |
-| Accessibility  | 100   |
-| Best practices | 100   |
-| SEO            | 100   |
+El resultado anterior era 97/100/100/100. Esta diferencia de un punto corresponde a una medición local; los valores varían con dispositivo, red y carga del equipo. No son métricas de campo de producción.
 
-Observed FCP: 1.5 s; LCP: 2.5 s. Scores are local lab measurements, not production field Core Web Vitals, and depend on hosting, device and network.
+## Git y despliegue
 
-## GitHub Pages
+Rama local verificada: **master**. Remoto existente: `git@github-jesus:Jesus-HG-MX/Jesus-HG-MX.github.io.git`.
 
-The official-actions workflow builds on pushes to `main` and manual dispatch, then deploys `dist/` to the `github-pages` environment. Node 20, npm cache, minimum requested permissions and deployment concurrency are configured. Canonical, Open Graph, Twitter metadata, structured data, robots and sitemap use `https://jesus-hg-mx.github.io/`.
+El único cambio en `.github/workflows/deploy.yml` es `branches: [main]` → `branches: [master]`. Se conservan acciones, Node 20, permisos, concurrencia, entorno y publicación de `dist/`. Vite mantiene `base: '/'` y la URL es `https://jesus-hg-mx.github.io/`.
 
-The current working directory has no `.git` metadata or configured remote. No repository was initialized, history modified, commit created, push performed or Pages setting changed. Integrate these files into the existing repository and select **Settings → Pages → Source → GitHub Actions**.
-
-The production CV URL returned **HTTP 404** during this session. The local production artifact downloads correctly; live verification remains pending the first deployment. External LinkedIn availability and authentication are outside this site's control.
+No se cambió de rama, no se modificó el historial y no se realizó commit ni push. Pendiente: publicar los cambios mediante commit y push a `master`; después comprobar el workflow y el sitio público. Si el entorno `github-pages` restringe ramas, debe permitir `master`. No se afirma que la actualización ya esté desplegada.

@@ -5,9 +5,9 @@ export function Education() {
     <div className="education-block reveal">
       <p className="eyebrow">
         <span />
-        EDUCATION
+        EDUCACIÓN
       </p>
-      <h2 className="education-heading">Education</h2>
+      <h2 className="education-heading">Educación</h2>
       <div className="degree">
         <div className="degree-icon">
           <Icon name="award" size={32} />

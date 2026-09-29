@@ -262,22 +262,6 @@ button:focus-visible {
   min-height: 39px;
   font-size: 10px;
 }
-.languages {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  font-size: 10px;
-}
-.languages > span:nth-child(2) {
-  color: #71818a;
-}
-.languages button {
-  background: none;
-  border: 0;
-  padding: 8px 0;
-  color: #74858f;
-  font-size: 10px;
-}
 .menu-toggle {
   display: none;
   background: transparent;
@@ -1098,9 +1082,6 @@ button:focus-visible {
   .navigation > a:not(.button) {
     font-size: 10px;
   }
-  .languages {
-    gap: 7px;
-  }
   .hero h1 {
     font-size: 52px;
   }
@@ -1205,10 +1186,6 @@ button:focus-visible {
     min-height: 46px;
     max-width: 200px;
     font-size: 12px;
-  }
-  .languages {
-    margin-top: 15px;
-    gap: 15px;
   }
   .hero {
     height: 760px;
@@ -1855,5 +1832,61 @@ section[id] {
   }
   .hero {
     min-height: 740px;
+  }
+}
+
+/* Ajustes de legibilidad para el contenido en español. */
+.responsibilities {
+  padding: 0 0 0 14px;
+  margin: 16px 0 0;
+  color: #586973;
+  font-size: 12px;
+  line-height: 1.85;
+}
+.responsibilities li {
+  margin-bottom: 8px;
+  padding-left: 2px;
+}
+.responsibilities li::marker {
+  color: #a5652e;
+}
+.metric small {
+  white-space: normal;
+  line-height: 1.65;
+}
+.metric > div {
+  min-width: 0;
+}
+@media (max-width: 1150px) and (min-width: 901px) {
+  .navigation {
+    gap: 12px;
+  }
+}
+@media (max-width: 600px) {
+  .hero-subtitle {
+    font-size: 12px;
+  }
+  .hero-bottom .principles {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 10px 14px;
+    font-size: 8px;
+  }
+  .principles span + span:before {
+    display: none;
+  }
+  .hero-buttons .text-button {
+    margin-left: 0;
+  }
+  .responsibilities {
+    font-size: 12px;
+  }
+  .image-caption {
+    font-size: 6px;
+    letter-spacing: 0.5px;
+  }
+  .section-number {
+    margin-left: 10px;
+    flex-shrink: 0;
   }
 }

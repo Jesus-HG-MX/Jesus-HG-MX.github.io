@@ -35,7 +35,7 @@ export default function App() {
   return (
     <>
       <a className="skip-link" href="#main">
-        Skip to content
+        Saltar al contenido
       </a>
       <Header />
       <main id="main">
@@ -48,14 +48,14 @@ export default function App() {
         <section
           className="section education"
           id="education"
-          aria-label="Education and certifications"
+          aria-label="Educación y certificaciones"
         >
           <div className="container education-grid">
             <Education />
             <Certifications />
           </div>
         </section>
-        <section className="statement" aria-label="Professional commitment">
+        <section className="statement" aria-label="Compromiso profesional">
           <div className="container">
             <span className="quote-mark" aria-hidden="true">
               “

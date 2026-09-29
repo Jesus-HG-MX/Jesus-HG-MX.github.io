@@ -5,12 +5,12 @@ export function Experience() {
     <section className="section experience" id="experience">
       <div className="container">
         <SectionTitle
-          eyebrow="EXPERIENCE"
-          title="Professional Experience"
+          eyebrow="EXPERIENCIA"
+          title="Experiencia Profesional"
           number="01"
         />
         <div className="section-intro">
-          <p>A career built on the production floor.</p>
+          <p>Experiencia en manufactura automotriz y procesos industriales.</p>
           <span>2012 — 2026</span>
         </div>
         <div className="timeline">
@@ -26,9 +26,11 @@ export function Experience() {
                 <span className="experience-index">0{i + 1}</span>
                 <h3>{e.company}</h3>
                 <p className="role">{e.role}</p>
-                {e.description.map((d) => (
-                  <p key={d}>{d}</p>
-                ))}
+                <ul className="responsibilities">
+                  {e.description.map((d) => (
+                    <li key={d}>{d}</li>
+                  ))}
+                </ul>
                 <div className="tags">
                   {e.tags.map((t) => (
                     <span key={t}>{t}</span>
