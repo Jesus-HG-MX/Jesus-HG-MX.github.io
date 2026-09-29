@@ -40,12 +40,6 @@ export function Contact() {
               value: profile.email,
               href: "mailto:" + profile.email,
             },
-            {
-              icon: "phone",
-              label: "TELÉFONO",
-              value: profile.phone,
-              href: profile.phoneHref,
-            },
             { icon: "pin", label: "UBICACIÓN", value: profile.location },
             {
               icon: "linkedin",

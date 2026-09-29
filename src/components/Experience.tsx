@@ -1,5 +1,11 @@
 import { copy } from "../data/profile";
 import { SectionTitle } from "./Shared";
+const companyLogos: Record<string, string> = {
+  "INNOFA de México": "innofa",
+  "La Josefina": "la-josefina",
+  Tenneco: "tenneco",
+  "Benteler de México": "benteler",
+};
 export function Experience() {
   return (
     <section className="section experience" id="experience">
@@ -23,6 +29,20 @@ export function Experience() {
                 {e.date}
               </div>
               <div className="experience-body">
+                <picture className="company-logo">
+                  <source
+                    srcSet={`/images/logos/${companyLogos[e.company]}.webp`}
+                    type="image/webp"
+                  />
+                  <img
+                    src={`/images/logos/${companyLogos[e.company]}.png`}
+                    alt=""
+                    width="360"
+                    height="112"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
                 <span className="experience-index">0{i + 1}</span>
                 <h3>{e.company}</h3>
                 <p className="role">{e.role}</p>

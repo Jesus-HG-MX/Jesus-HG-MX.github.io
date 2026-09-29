@@ -25,7 +25,7 @@ Se mantiene `base: '/'` porque es un sitio de usuario publicado en la raíz. El 
 
 En GitHub debe permanecer seleccionado **Settings → Pages → Source → GitHub Actions**. No se necesita cambiar a `main`, crear una rama `gh-pages`, añadir un router ni un archivo 404 especial. No se han cambiado la rama local, el historial o el remoto.
 
-Para publicar esta actualización: revisar los cambios, crear el commit y hacer push a `master`. Consultar el resultado en **Actions → Deploy portfolio to GitHub Pages**. Si existe una regla de protección del entorno `github-pages`, debe permitir despliegues desde `master`.
+El sitio ya está publicado en https://jesus-hg-mx.github.io/. Para publicar futuras actualizaciones, revisar los cambios, crear el commit y hacer push a `master`. Consultar el resultado en **Actions → Deploy portfolio to GitHub Pages**. Si existe una regla de protección del entorno `github-pages`, debe permitir despliegues desde `master`.
 
 ## Contenido y estructura
 
@@ -34,7 +34,7 @@ Para publicar esta actualización: revisar los cambios, crear el commit y hacer 
 - `src/components/`: componentes existentes de cada sección y elementos compartidos.
 - `src/styles/global.css`: diseño, animaciones y responsive.
 - `scripts/prerender.tsx`: HTML estático y SEO de producción.
-- `public/images/`: imágenes AVIF, fuentes WebP de la composición social y `social-card.png` en español.
+- `public/images/`: imágenes industriales, retrato real de Gabriel (`profile-original.png` original transparente, AVIF/WebP responsive y `profile.jpeg` conservado) y `social-card.png` en español.
 - `public/cv/Jesus_Gabriel_Hernandez_Gutierrez_CV.pdf`: CV en español.
 - `tests/portfolio.spec.ts`: comprobaciones funcionales en navegador.
 
@@ -51,6 +51,8 @@ node --import tsx scripts/create-assets.tsx
 ```
 
 Requiere Google Chrome. No forma parte del build ni del workflow; los recursos terminados se incluyen en el repositorio. El CV utiliza exclusivamente los datos proporcionados; Yellow Belt figura como **En curso** y el dato **>90%** no se atribuye a una empresa o periodo.
+
+El hero utiliza el retrato real transparente con dimensiones explícitas y variantes de 480 y 860 px: AVIF de 18–43 KB y WebP de 34–92 KB. `picture` y `srcset` seleccionan el recurso; el fallback es `profile-original.png`, que conserva exactamente el PNG original de 1,6 MB antes identificado incorrectamente como WebP. El rostro se conserva sin alteraciones; la integración inferior se aplica con una máscara CSS. El retrato mantiene prioridad automática; el fondo industrial, identificado como LCP, conserva prioridad alta.
 
 Para cambiar fotografías, conservar dimensiones y nombres o actualizar también `srcSet`, precarga y textos alternativos. La fotografía industrial es ilustrativa; no representa a Gabriel ni acredita maquinaria utilizada en sus empleos.
 
@@ -74,3 +76,11 @@ node scripts/lighthouse.mjs
 ```
 
 Lighthouse requiere Node 22.19+ y descarga su herramienta fijada bajo demanda; no modifica las dependencias de despliegue de Node 20. Resultados y límites en `docs/verification.md`.
+
+## Logos e iconografía
+
+Los originales de INNOFA, La Josefina, Tenneco y Benteler se conservan en `public/images/`. Los derivados en `public/images/logos/` tienen transparencia real, canvas de 360 × 112 px y presentación de 180 × 56 px sin deformación. WebP sin pérdida suma aproximadamente 31 KB para las cuatro marcas, con fallback PNG. La nitidez de La Josefina está limitada por su original de 200 × 200 px.
+
+Los iconos SVG de Lucide se integran en `src/components/Icon.tsx`, con trazo de 1,8 y tamaños consistentes por contexto. No requieren una librería adicional en producción. Licencia en `docs/licenses/lucide.txt`.
+
+El sitio, los datos estructurados y el CV descargable omiten el teléfono. Para actualizar únicamente el PDF, sin regenerar la imagen social: `node --import tsx scripts/create-assets.tsx --cv-only`.

@@ -23,12 +23,7 @@ export function Hero() {
           </p>
           <h1 id="hero-title" aria-label={profile.name}>
             JESÚS GABRIEL
-            <br />
-            <span>
-              HERNÁNDEZ
-              <br />
-              GUTIÉRREZ
-            </span>
+            <span>HERNÁNDEZ GUTIÉRREZ</span>
           </h1>
           <p className="hero-subtitle">
             Líder de Manufactura <span>|</span> Ingeniero Industrial
@@ -70,15 +65,36 @@ export function Hero() {
             </a>
           </div>
         </div>
-        <div className="industrial-note">
-          <span className="crosshair" aria-hidden="true">
-            +
-          </span>
-          <span>
-            MANUFACTURA AUTOMOTRIZ
-            <br />
-            <strong>Producción y mejora continua.</strong>
-          </span>
+        <div className="hero-portrait">
+          <picture>
+            <source
+              srcSet="/images/profile-480.avif 480w, /images/profile-860.avif 860w"
+              sizes="(max-width: 767px) 280px, (max-width: 1023px) 40vw, 420px"
+              type="image/avif"
+            />
+            <source
+              srcSet="/images/profile-480.webp 480w, /images/profile.webp 860w"
+              sizes="(max-width: 767px) 280px, (max-width: 1023px) 40vw, 420px"
+              type="image/webp"
+            />
+            <img
+              src="/images/profile-original.png"
+              alt={profile.name}
+              width="1150"
+              height="1368"
+              decoding="async"
+            />
+          </picture>
+          <div className="industrial-note">
+            <span className="crosshair" aria-hidden="true">
+              +
+            </span>
+            <span>
+              MANUFACTURA AUTOMOTRIZ
+              <br />
+              <strong>Producción y mejora continua.</strong>
+            </span>
+          </div>
         </div>
         <div className="hero-bottom">
           <a href="#profile">

@@ -15,7 +15,6 @@ const json = JSON.stringify({
   jobTitle: profile.title,
   url,
   email: profile.email,
-  telephone: "+522212690680",
   sameAs: [profile.linkedin],
   address: {
     "@type": "PostalAddress",

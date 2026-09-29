@@ -56,6 +56,16 @@ for (const width of [360, 390, 430, 768, 1024, 1200, 1440]) {
         imgs.every((img) => img.complete && img.naturalWidth > 0),
       );
     expect(images).toBeTruthy();
+    const logos = page.locator(".company-logo img");
+    await expect(logos).toHaveCount(4);
+    expect(
+      await logos.evaluateAll((images) =>
+        images.every((image) => {
+          const box = image.getBoundingClientRect();
+          return box.width === 180 && box.height === 56;
+        }),
+      ),
+    ).toBeTruthy();
     expect(errors).toEqual([]);
   });
 }
@@ -106,7 +116,9 @@ test("SEO, static content, links and reduced motion", async ({
     "<loc>https://jesus-hg-mx.github.io/</loc>",
   );
   expect(links).toContain("mailto:gabon1250@gmail.com");
-  expect(links).toContain("tel:+522212690680");
+  expect(links.some((link) => link?.startsWith("tel:"))).toBe(false);
+  expect(schema).not.toHaveProperty("telephone");
+  await expect(page.getByText("TELÉFONO", { exact: true })).toHaveCount(0);
   expect(links).toContain("https://www.linkedin.com/in/gabriel8925/");
   for (const path of [
     "/robots.txt",

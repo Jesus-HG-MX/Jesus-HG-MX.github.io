@@ -7,9 +7,19 @@
   --navy: #071d2b;
   --navy-2: #0b2638;
   --orange: #d97721;
-  --muted: #586973;
+  --muted: #455761;
   --line: #dfe3e3;
   --cream: #f7f5f1;
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-48: 48px;
+  --space-64: 64px;
+  --space-80: 80px;
+  --space-96: 96px;
 }
 * {
   box-sizing: border-box;
@@ -61,9 +71,9 @@ h3 {
   font-family: Manrope, Arial, sans-serif;
 }
 h2 {
-  font-size: clamp(30px, 3vw, 40px);
+  font-size: clamp(36px, 3vw, 44px);
   letter-spacing: -1.5px;
-  line-height: 1.2;
+  line-height: 1.12;
   font-weight: 700;
 }
 h3 {
@@ -86,16 +96,16 @@ button:focus-visible {
 .container {
   max-width: 1280px;
   margin: 0 auto;
-  width: calc(100% - 112px);
+  width: calc(100% - 96px);
 }
 .section {
-  padding: 100px 0;
+  padding: var(--space-96) 0;
 }
 .eyebrow {
   display: flex;
   align-items: center;
   gap: 11px;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 2.3px;
   line-height: 1.6;
@@ -117,8 +127,8 @@ button:focus-visible {
 }
 .section-number {
   font-family: Manrope, sans-serif;
-  font-size: 14px;
-  color: #586973;
+  font-size: 12px;
+  color: var(--muted);
   letter-spacing: 2px;
   padding-bottom: 4px;
 }
@@ -127,11 +137,11 @@ button:focus-visible {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  min-height: 47px;
+  min-height: 48px;
   padding: 0 21px;
   border: 1px solid transparent;
   border-radius: 10px;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 600;
   transition:
     background 0.2s,
@@ -163,9 +173,9 @@ button:focus-visible {
   align-items: center;
   gap: 12px;
   color: white;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 500;
-  min-height: 46px;
+  min-height: 48px;
 }
 .text-button:hover {
   color: #e58a2b;
@@ -182,7 +192,7 @@ button:focus-visible {
   top: 12px;
 }
 .header {
-  height: 88px;
+  height: 96px;
   background: var(--navy);
   position: sticky;
   top: 0;
@@ -208,7 +218,7 @@ button:focus-visible {
 }
 .brand-mark {
   font:
-    800 30px Manrope,
+    800 35px Manrope,
     sans-serif;
   letter-spacing: -2px;
   padding-right: 17px;
@@ -219,14 +229,15 @@ button:focus-visible {
 }
 .brand-name {
   font:
-    700 12px Manrope,
+    700 15px Manrope,
     sans-serif;
   letter-spacing: 1.1px;
   line-height: 1.7;
+  font-size: 15px;
 }
 .brand-name small {
   display: block;
-  font-size: 8px;
+  font-size: 12px;
   font-weight: 400;
   letter-spacing: 1.2px;
   color: #bec6ca;
@@ -234,10 +245,10 @@ button:focus-visible {
 .navigation {
   display: flex;
   align-items: center;
-  gap: 25px;
+  gap: 22px;
 }
 .navigation > a:not(.button) {
-  font-size: 11px;
+  font-size: 14px;
   position: relative;
   line-height: 44px;
   color: #c9d0d4;
@@ -259,8 +270,8 @@ button:focus-visible {
   background: #d97721;
   color: #071d2b;
   padding: 0 16px;
-  min-height: 39px;
-  font-size: 10px;
+  min-height: 48px;
+  font-size: 14px;
 }
 .menu-toggle {
   display: none;
@@ -322,14 +333,14 @@ button:focus-visible {
 .hero .eyebrow {
   color: #e9a15e;
   letter-spacing: 2.5px;
-  font-size: 10px;
+  font-size: 12px;
   margin-bottom: 25px;
 }
 .hero h1 {
-  font-size: clamp(43px, 4.15vw, 65px);
+  font-size: clamp(54px, 4.3vw, 64px);
   font-weight: 800;
   letter-spacing: -2.7px;
-  line-height: 1.11;
+  line-height: 1.1;
 }
 .hero h1 > span {
   font-weight: 400;
@@ -337,7 +348,7 @@ button:focus-visible {
 }
 .hero-subtitle {
   font-family: Manrope, sans-serif;
-  font-size: 17px;
+  font-size: 18px;
   margin: 23px 0 19px;
   font-weight: 500;
   color: #ebedea;
@@ -349,25 +360,27 @@ button:focus-visible {
   font-weight: 400;
 }
 .hero-description {
-  max-width: 515px;
-  font-size: 12px;
-  line-height: 1.95;
+  max-width: 60ch;
+  font-size: 17px;
+  line-height: 1.65;
   color: #c1cbd1;
 }
 .hero-buttons {
   display: flex;
+  flex-wrap: wrap;
   gap: 14px;
   align-items: center;
   margin-top: 29px;
 }
 .hero-buttons .text-button {
   margin-left: 9px;
+  font-size: 15px;
 }
 .hero-contact {
   display: flex;
   gap: 18px;
   flex-wrap: wrap;
-  font-size: 9px;
+  font-size: 14px;
   color: #c1cbd1;
   margin-top: 32px;
 }
@@ -422,7 +435,7 @@ button:focus-visible {
   padding-top: 21px;
 }
 .hero-bottom > a {
-  font-size: 8px;
+  font-size: 12px;
   letter-spacing: 2px;
   color: #c4d1d7;
 }
@@ -435,7 +448,7 @@ button:focus-visible {
   display: flex;
   gap: 20px;
   text-transform: uppercase;
-  font-size: 8px;
+  font-size: 12px;
   letter-spacing: 1.5px;
   color: #dbe1e3;
 }
@@ -472,32 +485,33 @@ button:focus-visible {
 }
 .metric p {
   font:
-    800 29px Manrope,
+    800 40px Manrope,
     sans-serif;
   letter-spacing: -1px;
   line-height: 1.3;
+  font-size: 40px;
 }
 .metric p > span {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.4px;
 }
 .metric small {
   display: block;
-  font-size: 9px;
+  font-size: 14px;
   color: var(--muted);
   margin-top: 7px;
   white-space: nowrap;
 }
 .metric-1 p,
 .metric-3 p {
-  font-size: 15px;
+  font-size: 21px;
   letter-spacing: 0.5px;
 }
 .metric-1 p span,
 .metric-3 p span {
   display: block;
-  font-size: 11px;
+  font-size: 14px;
   margin-top: 4px;
 }
 .profile-grid {
@@ -510,13 +524,13 @@ button:focus-visible {
   margin-bottom: 28px;
 }
 .body-large {
-  font-size: 13px;
+  font-size: 17px;
   color: var(--muted);
-  line-height: 1.95;
+  line-height: 1.65;
 }
 .profile-focus {
-  font-size: 13px;
-  line-height: 1.9;
+  font-size: 17px;
+  line-height: 1.65;
   color: #18394a;
   margin-top: 20px;
   font-weight: 500;
@@ -526,7 +540,7 @@ button:focus-visible {
   align-items: center;
   gap: 13px;
   margin-top: 34px;
-  font-size: 8px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 1.7px;
 }
@@ -562,7 +576,7 @@ button:focus-visible {
 .image-label > span:nth-child(2) {
   font-family: Manrope;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.6;
 }
 .image-label strong {
@@ -582,9 +596,9 @@ button:focus-visible {
   position: absolute;
   bottom: 7px;
   right: 0;
-  font-size: 7px;
+  font-size: 12px;
   letter-spacing: 1.2px;
-  color: #586973;
+  color: var(--muted);
 }
 .experience {
   background: #f0f1ed;
@@ -599,11 +613,11 @@ button:focus-visible {
   justify-content: space-between;
   align-items: center;
   color: var(--muted);
-  font-size: 12px;
+  font-size: 16px;
   margin-bottom: 42px;
 }
 .section-intro > span {
-  font-size: 10px;
+  font-size: 13px;
   letter-spacing: 1.3px;
 }
 .timeline {
@@ -614,7 +628,7 @@ button:focus-visible {
   position: relative;
   border-bottom: 1px solid #c5cdce;
   padding-bottom: 20px;
-  font-size: 11px;
+  font-size: 15px;
   font-weight: 600;
   letter-spacing: 0.5px;
 }
@@ -638,24 +652,24 @@ button:focus-visible {
 }
 .experience-index {
   font-size: 9px;
-  color: #586973;
+  color: var(--muted);
   letter-spacing: 1px;
 }
 .experience-body h3 {
   margin-top: 11px;
-  font-size: 20px;
-  line-height: 1.5;
+  font-size: 24px;
+  line-height: 1.15;
 }
 .experience-body .role {
   color: #986026;
-  font-size: 11px;
+  font-size: 17px;
   font-weight: 600;
   margin: 5px 0 19px;
   line-height: 1.6;
 }
 .experience-body > p:not(.role) {
   font-size: 11px;
-  color: #586973;
+  color: var(--muted);
   line-height: 1.9;
   margin-top: 12px;
 }
@@ -666,7 +680,7 @@ button:focus-visible {
   margin-top: 24px;
 }
 .tags > span {
-  font-size: 8px;
+  font-size: 13px;
   border: 1px solid #d8deda;
   color: #526772;
   padding: 5px 7px;
@@ -684,14 +698,14 @@ button:focus-visible {
   border: 1px solid #e0e4e1;
   background: #fff;
   border-radius: 12px;
-  padding: 28px 24px;
+  padding: var(--space-24);
   box-shadow: 0 4px 10px #071d2b02;
   transition:
     transform 0.25s,
     border-color 0.25s;
 }
 .skill-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-2px);
   border-color: #bdc9cb;
 }
 .card-top {
@@ -703,13 +717,13 @@ button:focus-visible {
   color: #b87837;
 }
 .card-top > span {
-  font-size: 9px;
-  color: #586973;
+  font-size: 12px;
+  color: var(--muted);
   letter-spacing: 1px;
 }
 .skill-card h3 {
-  font-size: 17px;
-  line-height: 1.5;
+  font-size: 22px;
+  line-height: 1.15;
   margin-top: 25px;
   max-width: 170px;
   min-height: 51px;
@@ -724,9 +738,9 @@ button:focus-visible {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 10px;
-  color: #61717a;
-  line-height: 1.5;
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 1.65;
   margin-top: 13px;
 }
 .skill-card li:first-child {
@@ -745,7 +759,7 @@ button:focus-visible {
 }
 .highlight-card {
   border-radius: 12px;
-  padding: 28px 24px;
+  padding: var(--space-24);
   min-height: 250px;
   background: var(--navy);
   color: #fff;
@@ -762,13 +776,13 @@ button:focus-visible {
   opacity: 0.45;
 }
 .highlight-card h3 {
-  font-size: 20px;
-  line-height: 1.4;
+  font-size: 23px;
+  line-height: 1.15;
   max-width: 170px;
 }
 .highlight-card p {
-  font-size: 10px;
-  line-height: 1.8;
+  font-size: 16px;
+  line-height: 1.65;
   color: #becbd0;
   margin-top: 14px;
 }
@@ -787,7 +801,7 @@ button:focus-visible {
   color: #102f42;
 }
 .highlight-3 p {
-  color: #576872;
+  color: var(--muted);
 }
 .highlight-3 .card-top > svg:first-child {
   color: #946334;
@@ -823,12 +837,12 @@ button:focus-visible {
   flex-shrink: 0;
 }
 .degree h3 {
-  font-size: 25px;
+  font-size: 24px;
   letter-spacing: -0.8px;
 }
 .degree p {
-  font-size: 13px;
-  color: #586973;
+  font-size: 17px;
+  color: var(--muted);
   margin: 10px 0 18px;
 }
 .credential {
@@ -836,7 +850,7 @@ button:focus-visible {
   gap: 8px;
   align-items: center;
   color: #63726e;
-  font-size: 9px;
+  font-size: 14px;
   border: 1px solid #d5dbd5;
   border-radius: 4px;
   padding: 7px 10px;
@@ -858,7 +872,7 @@ button:focus-visible {
   display: flex;
   align-items: center;
   gap: 11px;
-  font-size: 12px;
+  font-size: 16px;
   padding: 10px 0;
   color: #455d69;
 }
@@ -866,7 +880,7 @@ button:focus-visible {
   color: #a07846;
 }
 .certifications small {
-  font-size: 8px;
+  font-size: 14px;
   color: #8c5b27;
   border: 1px solid #dfceb6;
   padding: 4px 7px;
@@ -877,7 +891,7 @@ button:focus-visible {
 .statement {
   background: var(--navy-2);
   color: #fff;
-  padding: 65px 0 60px;
+  padding: 48px 0 44px;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -915,7 +929,7 @@ button:focus-visible {
   margin: 13px auto 26px;
 }
 .statement p {
-  font-size: 8px;
+  font-size: 12px;
   letter-spacing: 2px;
   color: #b3c3ca;
 }
@@ -933,7 +947,7 @@ button:focus-visible {
   align-items: center;
 }
 .contact h2 {
-  font-size: 48px;
+  font-size: clamp(40px, 4vw, 56px);
   letter-spacing: -2px;
 }
 .contact h2 > span {
@@ -941,13 +955,14 @@ button:focus-visible {
 }
 .contact .eyebrow {
   margin-bottom: 17px;
+  font-size: 12px;
 }
 .contact p {
-  color: #586973;
-  font-size: 12px;
+  color: var(--muted);
+  font-size: 17px;
   max-width: 470px;
   margin-top: 20px;
-  line-height: 1.9;
+  line-height: 1.65;
 }
 .contact-buttons {
   display: flex;
@@ -959,14 +974,14 @@ button:focus-visible {
 .light-outline {
   border-color: #cbd3d4;
   background: transparent;
-  font-size: 11px;
+  font-size: 15px;
 }
 .light-outline:hover {
   background: #f0f1ed;
 }
 .text-button.dark {
   color: #344f5e;
-  font-size: 10px;
+  font-size: 15px;
   margin-left: 5px;
   gap: 7px;
 }
@@ -992,14 +1007,14 @@ button:focus-visible {
 }
 .contact-row > div > span {
   display: block;
-  font-size: 8px;
+  font-size: 12px;
   letter-spacing: 1.7px;
-  color: #586973;
+  color: var(--muted);
   margin-bottom: 6px;
 }
 .contact-row a,
 .contact-row p {
-  font-size: 12px;
+  font-size: 16px;
   color: #284453;
   display: block;
   margin: 0;
@@ -1021,16 +1036,16 @@ button:focus-visible {
 }
 .footer a {
   font-family: Manrope;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 600;
 }
 .footer p {
   color: #96a8b2;
-  font-size: 8px;
+  font-size: 14px;
   margin-top: 8px;
 }
 .footer-inner > span {
-  font-size: 9px;
+  font-size: 14px;
   color: #a4b3bc;
   text-align: right;
   line-height: 1.9;
@@ -1048,13 +1063,16 @@ button:focus-visible {
 }
 @media (min-width: 1600px) {
   .hero h1 {
-    font-size: 70px;
+    font-size: clamp(54px, 4.3vw, 64px);
+    line-height: 1.1;
   }
   .hero-description {
-    font-size: 14px;
+    font-size: 17px;
+    line-height: 1.65;
+    max-width: 60ch;
   }
   .hero-subtitle {
-    font-size: 20px;
+    font-size: 18px;
   }
   .hero-copy {
     max-width: 710px;
@@ -1062,7 +1080,7 @@ button:focus-visible {
 }
 @media (max-width: 1150px) {
   .container {
-    width: calc(100% - 72px);
+    width: calc(100% - 96px);
   }
   .header-inner {
     width: calc(100% - 48px);
@@ -1074,19 +1092,20 @@ button:focus-visible {
     display: none;
   }
   .brand-name {
-    font-size: 10px;
+    font-size: 15px;
   }
   .brand-name small {
-    font-size: 7px;
+    font-size: 12px;
   }
   .navigation > a:not(.button) {
-    font-size: 10px;
+    font-size: 14px;
   }
   .hero h1 {
-    font-size: 52px;
+    font-size: clamp(54px, 4.3vw, 64px);
+    line-height: 1.1;
   }
   .hero-copy {
-    max-width: 600px;
+    max-width: 767px;
   }
   .industrial-note {
     right: 0;
@@ -1109,36 +1128,39 @@ button:focus-visible {
     width: 22px;
   }
   .metric small {
-    font-size: 8px;
+    font-size: 14px;
     white-space: normal;
     line-height: 1.6;
   }
   .metric-3 p {
-    font-size: 13px;
+    font-size: 21px;
   }
   .skill-card,
   .highlight-card {
     padding: 24px 18px;
   }
   .skill-card h3 {
-    font-size: 16px;
+    font-size: 22px;
+    line-height: 1.15;
   }
   .contact-grid {
     gap: 65px;
   }
   .hero-contact {
     gap: 14px;
+    font-size: 14px;
   }
   .experience-body h3 {
-    font-size: 18px;
+    font-size: 24px;
+    line-height: 1.15;
   }
   .contact-buttons {
     gap: 10px;
   }
 }
-@media (max-width: 900px) {
+@media (max-width: 1023px) {
   .header {
-    height: 76px;
+    height: 80px;
   }
   .header-inner {
     width: calc(100% - 48px);
@@ -1147,10 +1169,10 @@ button:focus-visible {
     display: block;
   }
   .brand-name {
-    font-size: 11px;
+    font-size: 15px;
   }
   .brand-name small {
-    font-size: 8px;
+    font-size: 12px;
   }
   .menu-toggle {
     display: flex;
@@ -1158,7 +1180,7 @@ button:focus-visible {
   .navigation {
     display: none;
     position: absolute;
-    top: 75px;
+    top: 100%;
     left: 0;
     right: 0;
     background: #071d2b;
@@ -1173,7 +1195,7 @@ button:focus-visible {
     gap: 2px;
   }
   .navigation > a:not(.button) {
-    font-size: 13px;
+    font-size: 14px;
     line-height: 44px;
   }
   .navigation > a.active:after {
@@ -1185,7 +1207,7 @@ button:focus-visible {
     margin-top: 15px;
     min-height: 46px;
     max-width: 200px;
-    font-size: 12px;
+    font-size: 14px;
   }
   .hero {
     height: 760px;
@@ -1200,7 +1222,8 @@ button:focus-visible {
     max-width: 550px;
   }
   .hero h1 {
-    font-size: 52px;
+    font-size: clamp(44px, 5vw, 52px);
+    line-height: 1.1;
   }
   .hero-shade {
     background:
@@ -1216,13 +1239,13 @@ button:focus-visible {
   .principles {
     gap: 10px;
     letter-spacing: 0.7px;
-    font-size: 7px;
+    font-size: 12px;
   }
   .principles span + span:before {
     margin-right: 10px;
   }
   .hero-bottom > a {
-    font-size: 7px;
+    font-size: 12px;
     letter-spacing: 1px;
   }
   .metrics-grid {
@@ -1242,14 +1265,14 @@ button:focus-visible {
     border: 0;
   }
   .metric p {
-    font-size: 27px;
+    font-size: 40px;
   }
   .metric-1 p,
   .metric-3 p {
-    font-size: 16px;
+    font-size: 21px;
   }
   .metric small {
-    font-size: 10px;
+    font-size: 14px;
   }
   .profile-grid {
     gap: 38px;
@@ -1263,20 +1286,20 @@ button:focus-visible {
     gap: 10px;
   }
   .image-label > span:nth-child(2) {
-    font-size: 12px;
+    font-size: 15px;
   }
   .image-label > svg {
     margin-left: 4px;
   }
   .section {
-    padding: 75px 0;
+    padding: var(--space-80) 0;
   }
   .body-large,
   .profile-focus {
-    font-size: 12px;
+    font-size: 17px;
   }
   .profile-signoff {
-    font-size: 7px;
+    font-size: 12px;
     letter-spacing: 1px;
   }
   .timeline {
@@ -1295,29 +1318,33 @@ button:focus-visible {
     gap: 20px;
   }
   .skill-card {
-    padding: 28px;
+    padding: var(--space-24);
   }
   .skill-card h3 {
     max-width: none;
     min-height: 0;
-    font-size: 19px;
+    font-size: 22px;
+    line-height: 1.15;
   }
   .skill-card li {
-    font-size: 12px;
+    font-size: 16px;
+    line-height: 1.65;
   }
   .highlights {
     padding-top: 0;
   }
   .highlight-card {
-    padding: 28px;
+    padding: var(--space-24);
     min-height: 250px;
   }
   .highlight-card h3 {
     font-size: 23px;
     max-width: 220px;
+    line-height: 1.15;
   }
   .highlight-card p {
-    font-size: 12px;
+    font-size: 16px;
+    line-height: 1.65;
   }
   .education-grid {
     gap: 35px;
@@ -1333,20 +1360,20 @@ button:focus-visible {
     height: 50px;
   }
   .degree h3 {
-    font-size: 21px;
+    font-size: 24px;
   }
   .degree p {
-    font-size: 12px;
+    font-size: 17px;
   }
   .credential {
-    font-size: 8px;
+    font-size: 14px;
   }
   .certifications li {
-    font-size: 10px;
+    font-size: 16px;
     gap: 8px;
   }
   .certifications small {
-    font-size: 7px;
+    font-size: 14px;
     padding: 4px;
   }
   .contact-grid {
@@ -1354,17 +1381,19 @@ button:focus-visible {
     grid-template-columns: 1.1fr 1fr;
   }
   .contact h2 {
-    font-size: 40px;
+    font-size: clamp(40px, 4vw, 56px);
   }
   .contact-buttons .text-button {
     flex-basis: 100%;
+    font-size: 15px;
   }
   .footer p {
     max-width: 440px;
     line-height: 1.8;
+    font-size: 14px;
   }
 }
-@media (max-width: 600px) {
+@media (max-width: 767px) {
   html {
     scroll-padding-top: 90px;
   }
@@ -1372,13 +1401,13 @@ button:focus-visible {
     width: calc(100% - 40px);
   }
   .header {
-    height: 72px;
+    height: 76px;
   }
   .header-inner {
     width: calc(100% - 40px);
   }
   .navigation {
-    top: 71px;
+    top: 100%;
   }
   .brand {
     gap: 12px;
@@ -1388,10 +1417,10 @@ button:focus-visible {
     padding-right: 12px;
   }
   .brand-name {
-    font-size: 10px;
+    font-size: 15px;
   }
   .brand-name small {
-    font-size: 7px;
+    font-size: 12px;
     letter-spacing: 1px;
   }
   .hero {
@@ -1408,17 +1437,17 @@ button:focus-visible {
     max-width: 100%;
   }
   .hero .eyebrow {
-    font-size: 8px;
+    font-size: 12px;
     letter-spacing: 1.6px;
     margin-bottom: 26px;
   }
   .hero h1 {
-    font-size: clamp(36px, 9.5vw, 56px);
+    font-size: clamp(34px, 9vw, 40px);
     letter-spacing: -1.5px;
-    line-height: 1.14;
+    line-height: 1.1;
   }
   .hero-subtitle {
-    font-size: 13px;
+    font-size: 18px;
     letter-spacing: -0.2px;
     line-height: 1.8;
     margin-top: 24px;
@@ -1427,9 +1456,9 @@ button:focus-visible {
     margin: 0 4px;
   }
   .hero-description {
-    font-size: 12px;
-    line-height: 1.9;
-    max-width: 450px;
+    font-size: 17px;
+    line-height: 1.65;
+    max-width: 60ch;
   }
   .hero-shade {
     background:
@@ -1446,17 +1475,17 @@ button:focus-visible {
   }
   .hero-buttons .button {
     padding: 0 16px;
-    font-size: 11px;
+    font-size: 15px;
   }
   .hero-buttons .text-button {
     margin-left: 3px;
-    font-size: 11px;
+    font-size: 15px;
     gap: 6px;
   }
   .hero-contact {
     gap: 9px 15px;
     margin-top: 27px;
-    font-size: 9px;
+    font-size: 14px;
   }
   .hero-contact > a:last-child {
     flex-basis: 100%;
@@ -1468,10 +1497,11 @@ button:focus-visible {
   }
   .hero-bottom > a {
     display: none;
+    font-size: 12px;
   }
   .principles {
     justify-content: space-between;
-    font-size: 7px;
+    font-size: 12px;
     gap: 0;
     letter-spacing: 0.5px;
   }
@@ -1498,44 +1528,45 @@ button:focus-visible {
     padding-right: 12px;
   }
   .metric p {
-    font-size: 25px;
+    font-size: 40px;
     line-height: 1.3;
   }
   .metric p > span {
-    font-size: 9px;
+    font-size: 14px;
   }
   .metric-1 p,
   .metric-3 p {
-    font-size: 11px;
+    font-size: 21px;
     letter-spacing: 0;
   }
   .metric-1 p > span,
   .metric-3 p > span {
-    font-size: 9px;
+    font-size: 14px;
     letter-spacing: 0.3px;
   }
   .metric small {
-    font-size: 8px;
+    font-size: 14px;
     line-height: 1.6;
     margin-top: 5px;
   }
   .section {
-    padding: 63px 0;
+    padding: var(--space-64) 0;
   }
   .section-title {
     margin-bottom: 30px;
   }
   .eyebrow {
-    font-size: 9px;
+    font-size: 12px;
     letter-spacing: 1.8px;
     margin-bottom: 13px;
   }
   h2 {
-    font-size: 29px;
+    font-size: clamp(28px, 7.5vw, 32px);
     letter-spacing: -1px;
+    line-height: 1.12;
   }
   .section-number {
-    font-size: 10px;
+    font-size: 12px;
     letter-spacing: 1px;
   }
   .profile-grid {
@@ -1547,10 +1578,10 @@ button:focus-visible {
   }
   .body-large,
   .profile-focus {
-    font-size: 13px;
+    font-size: 17px;
   }
   .profile-signoff {
-    font-size: 8px;
+    font-size: 12px;
     margin-top: 24px;
   }
   .profile-image {
@@ -1567,23 +1598,23 @@ button:focus-visible {
     gap: 15px;
   }
   .image-label > span:nth-child(2) {
-    font-size: 13px;
+    font-size: 15px;
   }
   .image-label > svg {
     margin-left: 12px;
   }
   .image-caption {
-    font-size: 6px;
+    font-size: 12px;
     letter-spacing: 0.8px;
   }
   .section-intro {
-    font-size: 11px;
+    font-size: 16px;
     gap: 20px;
     margin-bottom: 30px;
     align-items: flex-start;
   }
   .section-intro > span {
-    font-size: 8px;
+    font-size: 13px;
     white-space: nowrap;
     padding-top: 4px;
   }
@@ -1602,7 +1633,7 @@ button:focus-visible {
   .timeline-date {
     border: 0;
     padding: 0;
-    font-size: 11px;
+    font-size: 15px;
   }
   .timeline-dot {
     left: -31px;
@@ -1616,10 +1647,11 @@ button:focus-visible {
   }
   .experience-body h3 {
     margin: 0;
-    font-size: 23px;
+    font-size: 24px;
+    line-height: 1.15;
   }
   .experience-body .role {
-    font-size: 12px;
+    font-size: 17px;
     margin: 3px 0 15px;
   }
   .experience-body > p:not(.role) {
@@ -1630,26 +1662,28 @@ button:focus-visible {
     margin-top: 18px;
   }
   .tags > span {
-    font-size: 9px;
+    font-size: 13px;
   }
   .skills-grid {
     grid-template-columns: 1fr;
     gap: 15px;
   }
   .skill-card {
-    padding: 26px;
+    padding: var(--space-24);
   }
   .skill-card h3 {
     margin-top: 20px;
-    font-size: 21px;
+    font-size: 22px;
+    line-height: 1.15;
   }
   .skill-card ul {
     padding-top: 19px;
     margin-top: 18px;
   }
   .skill-card li {
-    font-size: 12px;
+    font-size: 16px;
     margin-top: 13px;
+    line-height: 1.65;
   }
   .skills {
     padding-bottom: 45px;
@@ -1662,7 +1696,7 @@ button:focus-visible {
     gap: 16px;
   }
   .highlight-card {
-    padding: 28px;
+    padding: var(--space-24);
     min-height: 220px;
   }
   .highlight-card .card-top {
@@ -1678,10 +1712,11 @@ button:focus-visible {
     font-size: 23px;
     letter-spacing: -0.5px;
     max-width: none;
+    line-height: 1.15;
   }
   .highlight-card p {
-    font-size: 13px;
-    line-height: 1.8;
+    font-size: 16px;
+    line-height: 1.65;
   }
   .education-grid {
     grid-template-columns: 1fr;
@@ -1701,10 +1736,10 @@ button:focus-visible {
     font-size: 24px;
   }
   .degree p {
-    font-size: 13px;
+    font-size: 17px;
   }
   .credential {
-    font-size: 9px;
+    font-size: 14px;
   }
   .certifications {
     padding: 30px 0 0;
@@ -1712,16 +1747,16 @@ button:focus-visible {
     border-top: 1px solid #dce0d9;
   }
   .certifications li {
-    font-size: 12px;
+    font-size: 16px;
     padding: 11px 0;
     gap: 12px;
   }
   .certifications small {
-    font-size: 8px;
+    font-size: 14px;
     padding: 5px 7px;
   }
   .statement {
-    padding: 55px 0 45px;
+    padding: 42px 0 38px;
   }
   .quote-mark {
     font-size: 64px;
@@ -1733,7 +1768,7 @@ button:focus-visible {
     margin-bottom: 25px;
   }
   .statement p {
-    font-size: 7px;
+    font-size: 12px;
     letter-spacing: 1.4px;
   }
   .contact-grid {
@@ -1741,10 +1776,11 @@ button:focus-visible {
     gap: 30px;
   }
   .contact h2 {
-    font-size: 42px;
+    font-size: clamp(40px, 4vw, 56px);
   }
   .contact p {
-    font-size: 13px;
+    font-size: 17px;
+    line-height: 1.65;
   }
   .contact-buttons {
     gap: 12px;
@@ -1752,11 +1788,11 @@ button:focus-visible {
   .contact-buttons .text-button {
     flex-basis: auto;
     margin-left: 0;
-    font-size: 10px;
+    font-size: 15px;
   }
   .contact-buttons .button {
     padding: 0 16px;
-    font-size: 11px;
+    font-size: 15px;
   }
   .contact-details {
     padding-top: 5px;
@@ -1766,24 +1802,24 @@ button:focus-visible {
   }
   .contact-row a,
   .contact-row p {
-    font-size: 13px;
+    font-size: 16px;
   }
   .footer-inner {
     align-items: flex-start;
     gap: 20px;
   }
   .footer a {
-    font-size: 11px;
+    font-size: 15px;
     line-height: 1.7;
     display: block;
     max-width: 235px;
   }
   .footer p {
-    font-size: 8px;
+    font-size: 14px;
     max-width: 250px;
   }
   .footer-inner > span {
-    font-size: 8px;
+    font-size: 14px;
     flex-shrink: 0;
     padding-top: 3px;
   }
@@ -1803,7 +1839,7 @@ button:focus-visible {
     transform: none;
   }
 }
-@media (max-width: 900px) {
+@media (max-width: 1023px) {
   .navigation {
     max-height: calc(100dvh - 76px);
     overflow-y: auto;
@@ -1814,18 +1850,20 @@ section[id] {
   scroll-margin-top: 96px;
 }
 .education-heading {
-  font-size: 32px;
+  font-size: clamp(36px, 3vw, 44px);
   margin-bottom: 28px;
+  line-height: 1.12;
 }
 .contact .eyebrow {
   color: #966021;
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 2.3px;
   margin-top: 0;
 }
-@media (max-width: 600px) {
+@media (max-width: 767px) {
   .education-heading {
-    font-size: 29px;
+    font-size: clamp(28px, 7.5vw, 32px);
+    line-height: 1.12;
   }
   .hero-contact a {
     min-height: 28px;
@@ -1839,9 +1877,9 @@ section[id] {
 .responsibilities {
   padding: 0 0 0 14px;
   margin: 16px 0 0;
-  color: #586973;
-  font-size: 12px;
-  line-height: 1.85;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.65;
 }
 .responsibilities li {
   margin-bottom: 8px;
@@ -1853,40 +1891,1264 @@ section[id] {
 .metric small {
   white-space: normal;
   line-height: 1.65;
+  font-size: 14px;
 }
 .metric > div {
   min-width: 0;
 }
-@media (max-width: 1150px) and (min-width: 901px) {
+@media (max-width: 1150px) and (min-width: 1024px) {
   .navigation {
     gap: 12px;
   }
 }
-@media (max-width: 600px) {
+@media (max-width: 767px) {
   .hero-subtitle {
-    font-size: 12px;
+    font-size: 18px;
   }
   .hero-bottom .principles {
     flex-wrap: wrap;
     justify-content: flex-start;
     gap: 10px 14px;
-    font-size: 8px;
+    font-size: 12px;
   }
   .principles span + span:before {
     display: none;
   }
   .hero-buttons .text-button {
     margin-left: 0;
+    font-size: 15px;
   }
   .responsibilities {
-    font-size: 12px;
+    font-size: 16px;
+    line-height: 1.65;
   }
   .image-caption {
-    font-size: 6px;
+    font-size: 12px;
     letter-spacing: 0.5px;
   }
   .section-number {
     margin-left: 10px;
     flex-shrink: 0;
+    font-size: 12px;
+  }
+}
+
+/* Refinamiento editorial: misma paleta y componentes, una escala más legible. */
+.hero {
+  height: auto;
+  min-height: 670px;
+  max-height: none;
+}
+.hero-content {
+  min-height: 670px;
+  padding-bottom: 95px;
+}
+.hero-copy {
+  max-width: 760px;
+  padding: 64px 0 48px;
+}
+.hero h1 {
+  font-size: clamp(54px, 4.3vw, 64px);
+  letter-spacing: -2px;
+  line-height: 1.1;
+}
+.hero h1 > span {
+  display: block;
+}
+.hero-description {
+  max-width: 60ch;
+  line-height: 1.65;
+  font-size: 17px;
+}
+.hero .eyebrow {
+  font-size: 12px;
+}
+.hero-contact {
+  gap: 14px 22px;
+  font-size: 14px;
+}
+.hero-bottom > a,
+.principles {
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+.industrial-note {
+  bottom: 130px;
+}
+.metrics-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  padding: 30px 0;
+}
+.metric {
+  padding: 6px 20px;
+  gap: 13px;
+  align-items: flex-start;
+}
+.metric > svg {
+  margin-top: 6px;
+}
+.metric p {
+  font-size: 40px;
+}
+.metric-1 p,
+.metric-3 p {
+  font-size: 21px;
+}
+.metric-1 p span,
+.metric-3 p span {
+  font-size: 14px;
+}
+.profile-grid {
+  gap: 64px;
+}
+.body-large {
+  max-width: 58ch;
+  line-height: 1.65;
+  font-size: 17px;
+}
+.profile-focus {
+  margin-top: 24px;
+  font-size: 17px;
+  line-height: 1.65;
+}
+.profile-image > img {
+  height: 360px;
+}
+.image-caption {
+  letter-spacing: 0.6px;
+  font-size: 12px;
+}
+.experience-body {
+  padding: 26px 26px 0 0;
+}
+.experience-item:last-child .experience-body {
+  padding-right: 0;
+}
+.experience-body h3 {
+  font-size: 24px;
+  line-height: 1.15;
+}
+.experience-index {
+  display: none;
+}
+.experience-body .role {
+  min-height: 48px;
+  margin: 10px 0 18px;
+  font-size: 17px;
+}
+.responsibilities {
+  line-height: 1.65;
+  padding-left: 18px;
+  font-size: 16px;
+}
+.responsibilities li {
+  margin-bottom: 12px;
+}
+.timeline-date {
+  color: #344f5e;
+  padding-bottom: 22px;
+  font-size: 15px;
+}
+.skill-card {
+  padding: var(--space-24);
+}
+.skill-card h3 {
+  font-size: 22px;
+  max-width: none;
+  min-height: 57px;
+  line-height: 1.15;
+}
+.skill-card li {
+  color: var(--muted);
+  line-height: 1.65;
+  font-size: 16px;
+}
+.highlight-card {
+  padding: var(--space-24);
+}
+.highlight-card h3 {
+  min-height: 56px;
+  max-width: none;
+  font-size: 23px;
+  line-height: 1.15;
+}
+.highlight-card .card-top {
+  margin-bottom: 30px;
+}
+.education {
+  padding: 62px 0;
+}
+.education-grid {
+  gap: 48px;
+  align-items: stretch;
+}
+.education-heading {
+  font-size: clamp(36px, 3vw, 44px);
+  margin-bottom: 24px;
+  line-height: 1.12;
+}
+.degree {
+  padding: 24px 0 0;
+  border-top: 1px solid #dce0d9;
+  gap: 18px;
+}
+.degree h3 {
+  font-size: 24px;
+}
+.degree-icon {
+  width: 52px;
+  height: 56px;
+}
+.credential {
+  color: #52645e;
+  line-height: 1.5;
+  font-size: 14px;
+}
+.certifications {
+  padding-left: 40px;
+}
+.certifications li {
+  padding: 16px 0;
+  line-height: 1.6;
+  font-size: 16px;
+}
+.certifications li + li {
+  border-top: 1px solid #dce0d9;
+}
+.certifications li > span {
+  min-width: 0;
+}
+.statement blockquote {
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+.contact-grid {
+  gap: 70px;
+}
+.contact p {
+  max-width: 52ch;
+  font-size: 17px;
+  line-height: 1.65;
+}
+.contact-buttons {
+  gap: 16px;
+}
+.contact-row {
+  padding: 20px 0;
+}
+.footer p {
+  max-width: 590px;
+  font-size: 14px;
+}
+@media (max-width: 1250px) and (min-width: 1024px) {
+  .brand-mark {
+    display: none;
+  }
+  .header-inner {
+    width: calc(100% - 48px);
+    gap: 18px;
+  }
+  .navigation {
+    gap: 14px;
+  }
+  .navigation > a:not(.button) {
+    font-size: 14px;
+  }
+}
+@media (max-width: 1279px) {
+  .timeline {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px 32px;
+  }
+  .skills-grid,
+  .highlights-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .metrics-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px 0;
+  }
+  .metric:nth-child(2) {
+    border: 0;
+  }
+  .metric:nth-child(3) {
+    padding-left: 0;
+  }
+  .skill-card h3 {
+    min-height: 0;
+    font-size: 22px;
+    line-height: 1.15;
+  }
+  .highlight-card h3 {
+    min-height: 0;
+    font-size: 23px;
+    line-height: 1.15;
+  }
+  .profile-grid {
+    gap: 36px;
+  }
+  .education-grid {
+    gap: 30px;
+  }
+  .certifications {
+    padding-left: 24px;
+  }
+  .contact-grid {
+    gap: 36px;
+  }
+}
+@media (max-width: 1023px) {
+  .hero-copy {
+    max-width: 650px;
+  }
+  .hero h1 {
+    font-size: clamp(44px, 5vw, 52px);
+    line-height: 1.1;
+  }
+  .navigation > a:not(.button) {
+    font-size: 14px;
+  }
+  .degree {
+    gap: 14px;
+  }
+  .degree-icon {
+    width: 42px;
+    height: 46px;
+  }
+  .degree h3 {
+    font-size: 24px;
+  }
+  .credential {
+    font-size: 14px;
+  }
+  .certifications li {
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 16px;
+  }
+  .certifications small {
+    margin-left: 26px;
+    font-size: 14px;
+  }
+}
+@media (max-width: 767px) {
+  .hero,
+  .hero-content {
+    min-height: 0;
+  }
+  .hero-content {
+    padding: 46px 0 105px;
+  }
+  .hero-copy {
+    padding: 0;
+  }
+  .hero h1 {
+    font-size: clamp(34px, 9vw, 40px);
+    letter-spacing: -1.4px;
+    line-height: 1.1;
+  }
+  .hero .eyebrow {
+    font-size: 12px;
+    letter-spacing: 1.2px;
+  }
+  .hero-subtitle {
+    font-size: 18px;
+  }
+  .hero-description {
+    font-size: 17px;
+    line-height: 1.65;
+    max-width: 60ch;
+  }
+  .hero-contact {
+    gap: 10px 18px;
+    font-size: 14px;
+  }
+  .hero-bottom .principles {
+    font-size: 12px;
+    gap: 8px 12px;
+  }
+  .hero-buttons {
+    gap: 12px;
+  }
+  .metric {
+    padding: 6px 12px;
+    gap: 8px;
+  }
+  .metric > svg {
+    display: none;
+  }
+  .metric small {
+    font-size: 14px;
+    line-height: 1.55;
+  }
+  .metric p {
+    font-size: 40px;
+  }
+  .metric-1 p,
+  .metric-3 p {
+    font-size: 21px;
+  }
+  .metric-1 p span,
+  .metric-3 p span {
+    font-size: 14px;
+  }
+  .profile-grid {
+    gap: 32px;
+  }
+  .profile-image > img {
+    height: 290px;
+  }
+  .profile-signoff {
+    font-size: 12px;
+    letter-spacing: 0.8px;
+  }
+  .image-caption {
+    font-size: 12px;
+    letter-spacing: 0.2px;
+  }
+  .section-intro {
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 16px;
+  }
+  .timeline {
+    display: block;
+  }
+  .timeline-date {
+    padding-bottom: 0;
+    font-size: 15px;
+  }
+  .experience-body {
+    padding: 18px 0 0;
+  }
+  .experience-body .role {
+    min-height: 0;
+    font-size: 17px;
+  }
+  .experience-item {
+    padding-bottom: 40px;
+  }
+  .skills-grid,
+  .highlights-grid {
+    grid-template-columns: 1fr;
+  }
+  .skill-card,
+  .highlight-card {
+    padding: 26px;
+  }
+  .education-grid {
+    gap: 30px;
+  }
+  .certifications {
+    padding: 26px 0 0;
+  }
+  .certifications li {
+    flex-wrap: nowrap;
+    font-size: 16px;
+  }
+  .certifications small {
+    margin-left: auto;
+    font-size: 14px;
+  }
+  .degree-icon {
+    width: 44px;
+    height: 48px;
+  }
+  .degree h3 {
+    font-size: 24px;
+  }
+  .statement p {
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+  .contact-row a,
+  .contact-row p {
+    font-size: 16px;
+  }
+  .contact-buttons .text-button {
+    min-height: 44px;
+    font-size: 15px;
+  }
+  .footer-inner {
+    flex-wrap: wrap;
+  }
+  .footer a {
+    max-width: none;
+    font-size: 15px;
+  }
+  .footer p {
+    max-width: none;
+    font-size: 14px;
+  }
+  .footer-inner > span {
+    text-align: left;
+    font-size: 14px;
+  }
+}
+
+/* Retrato real integrado en la composición industrial. */
+.hero-content {
+  display: grid;
+  grid-template-columns: 58% 42%;
+  align-items: center;
+}
+.hero-copy {
+  position: relative;
+  z-index: 1;
+  padding-right: 22px;
+}
+.hero h1 {
+  font-size: clamp(54px, 4.3vw, 64px);
+  line-height: 1.1;
+}
+.hero-portrait {
+  position: relative;
+  justify-self: end;
+  width: min(100%, 370px);
+  margin: 40px 0 30px;
+  background: #0b2638;
+  border-radius: 3px 40px 3px 3px;
+  overflow: hidden;
+  border: 1px solid #ffffff24;
+}
+.hero-portrait picture {
+  display: block;
+}
+.hero-portrait img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 403 / 560;
+  object-fit: cover;
+}
+.hero-portrait::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(0deg, #071d2b 0%, #071d2bdb 8%, transparent 35%);
+}
+.hero-portrait .industrial-note {
+  display: flex;
+  z-index: 1;
+  left: 22px;
+  right: 22px;
+  bottom: 22px;
+  max-width: none;
+  padding-top: 14px;
+  font-size: 12px;
+  letter-spacing: 1.1px;
+}
+.hero-portrait .industrial-note strong {
+  font-size: 15px;
+  line-height: 1.5;
+  margin-top: 6px;
+}
+.hero-shade {
+  background:
+    linear-gradient(90deg, #071d2bfa 0%, #071d2beb 40%, #071d2b77 100%),
+    linear-gradient(0deg, #071d2b 0%, transparent 60%);
+}
+@media (max-width: 1023px) and (min-width: 768px) {
+  .hero-copy {
+    padding-right: 24px;
+  }
+  .hero h1 {
+    font-size: clamp(44px, 5vw, 52px);
+    line-height: 1.1;
+  }
+  .hero-subtitle {
+    font-size: 18px;
+  }
+  .hero-portrait .industrial-note {
+    left: 16px;
+    right: 16px;
+    letter-spacing: 0.5px;
+    font-size: 12px;
+  }
+  .hero-portrait .industrial-note strong {
+    font-size: 15px;
+  }
+  .hero-portrait .crosshair {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding-bottom: 86px;
+  }
+  .hero-copy {
+    padding: 0;
+  }
+  .hero h1 {
+    font-size: clamp(34px, 9vw, 40px);
+    line-height: 1.1;
+  }
+  .hero-portrait {
+    width: min(100%, 250px);
+    align-self: center;
+    margin: 32px 0 0;
+  }
+  .hero-portrait .industrial-note {
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+    font-size: 12px;
+  }
+  .hero-portrait .industrial-note strong {
+    font-size: 15px;
+  }
+}
+
+/* Escala editorial y contraste compartidos por todas las secciones. */
+body {
+  font-size: 17px;
+}
+p {
+  line-height: 1.65;
+}
+.profile,
+.skills {
+  background: #fbfaf7;
+}
+.experience {
+  background: #eeefea;
+}
+.highlights,
+.contact {
+  background: #fff;
+}
+.education {
+  background: #f7f5f1;
+  padding: var(--space-64) 0;
+}
+.skills {
+  padding-bottom: var(--space-64);
+}
+.highlights {
+  padding-top: var(--space-64);
+}
+.hero-copy {
+  min-width: 0;
+}
+.hero-subtitle {
+  margin: var(--space-24) 0;
+  line-height: 1.5;
+}
+.hero-description,
+.hero-contact {
+  color: #d3dde2;
+}
+.hero h1 > span {
+  font-weight: 400;
+}
+.hero-buttons {
+  gap: var(--space-16);
+  margin-top: var(--space-32);
+}
+.hero-bottom {
+  gap: var(--space-24);
+}
+.principles {
+  flex-wrap: wrap;
+  gap: var(--space-12);
+  letter-spacing: 0.6px;
+}
+.principles span + span:before {
+  margin-right: var(--space-12);
+}
+.hero-portrait .industrial-note {
+  letter-spacing: 0.5px;
+  gap: var(--space-12);
+}
+.hero-portrait .industrial-note strong {
+  line-height: 1.5;
+}
+.hero-portrait .crosshair {
+  display: none;
+}
+.hero-contact a {
+  min-height: 44px;
+}
+.navigation {
+  gap: var(--space-24);
+}
+.brand-name small {
+  letter-spacing: 0.7px;
+}
+.metric p {
+  color: var(--navy);
+}
+.metric-0 p,
+.metric-2 p {
+  color: #965018;
+}
+.metric small {
+  line-height: 1.6;
+}
+.metrics-grid {
+  padding: var(--space-32) 0;
+}
+.metric {
+  padding-left: var(--space-16);
+  padding-right: var(--space-16);
+}
+.experience-body {
+  padding: var(--space-32) var(--space-24) 0 0;
+}
+.experience-body .role {
+  color: #89521f;
+  min-height: 52px;
+  line-height: 1.5;
+}
+.responsibilities {
+  margin-top: var(--space-24);
+}
+.responsibilities li {
+  margin-bottom: var(--space-12);
+}
+.tags {
+  gap: var(--space-8);
+}
+.skill-card h3 {
+  min-height: 52px;
+  margin-top: var(--space-24);
+}
+.skill-card .card-top > svg {
+  width: 32px;
+  height: 32px;
+}
+.skill-card ul {
+  margin-top: var(--space-24);
+  padding-top: var(--space-24);
+}
+.skill-card li {
+  align-items: flex-start;
+  gap: var(--space-8);
+}
+.skill-card li svg {
+  margin-top: 5px;
+}
+.highlight-card p {
+  color: #d0dbe0;
+}
+.highlight-1 p,
+.highlight-3 p {
+  color: var(--muted);
+}
+.highlight-card h3 {
+  min-height: 54px;
+}
+.image-caption {
+  position: static;
+  display: block;
+  text-align: right;
+  margin-top: var(--space-12);
+  line-height: 1.5;
+  letter-spacing: 0.3px;
+}
+.profile-image {
+  padding-bottom: 0;
+}
+.image-label {
+  bottom: 72px;
+}
+.profile-signoff {
+  line-height: 1.6;
+  letter-spacing: 0.6px;
+}
+.certifications small {
+  background: #fff7ec;
+  color: #794719;
+  padding: 4px 8px;
+}
+.certifications li {
+  gap: var(--space-12);
+}
+.contact-row a {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+}
+.contact-row {
+  padding: var(--space-12) 0;
+}
+.contact-row > div > span {
+  margin-bottom: var(--space-4);
+}
+.contact-buttons {
+  gap: var(--space-16);
+}
+.footer {
+  padding: var(--space-24) 0;
+}
+.footer p,
+.footer-inner > span {
+  color: #c4d0d7;
+}
+.footer a {
+  line-height: 1.5;
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .navigation {
+    gap: var(--space-16);
+  }
+  .header-inner {
+    width: calc(100% - 48px);
+    gap: var(--space-16);
+  }
+  .brand-mark {
+    display: none;
+  }
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  .timeline {
+    gap: var(--space-48) var(--space-32);
+  }
+  .experience-body .role {
+    min-height: 0;
+  }
+  .skill-card h3,
+  .highlight-card h3 {
+    min-height: 0;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .container {
+    width: calc(100% - 64px);
+  }
+  .hero-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-16);
+  }
+  .hero-content {
+    padding-bottom: 128px;
+  }
+  .hero-copy {
+    padding-right: var(--space-24);
+  }
+  .profile-grid,
+  .education-grid {
+    gap: var(--space-32);
+  }
+  .degree {
+    flex-wrap: wrap;
+  }
+  .contact-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-32);
+  }
+}
+@media (max-width: 767px) {
+  .education-heading {
+    font-size: clamp(28px, 7.5vw, 32px);
+  }
+  .header-inner {
+    width: calc(100% - 40px);
+  }
+  .brand-name {
+    font-size: 14px;
+  }
+  .brand-name small {
+    font-size: 11px;
+  }
+  .hero-content {
+    padding: var(--space-48) 0 112px;
+  }
+  .hero-copy {
+    padding: 0;
+  }
+  .hero .eyebrow {
+    letter-spacing: 1px;
+  }
+  .hero-description {
+    font-size: 16px;
+  }
+  .hero-subtitle {
+    font-size: 17px;
+  }
+  .hero-contact {
+    gap: var(--space-8) var(--space-16);
+    margin-top: var(--space-24);
+  }
+  .hero-contact > a:last-child {
+    flex-basis: auto;
+  }
+  .hero-bottom .principles {
+    gap: var(--space-8) var(--space-12);
+    letter-spacing: 0.3px;
+  }
+  .hero-portrait {
+    margin-top: var(--space-24);
+  }
+  .hero-portrait .industrial-note strong {
+    font-size: 14px;
+  }
+  .hero-portrait .industrial-note {
+    font-size: 12px;
+  }
+  .metric p {
+    font-size: 36px;
+  }
+  .metric-1 p,
+  .metric-3 p {
+    font-size: 18px;
+  }
+  .metric-1 p span,
+  .metric-3 p span {
+    font-size: 13px;
+  }
+  .metrics-grid {
+    row-gap: var(--space-24);
+    padding: var(--space-24) 0;
+  }
+  .metric {
+    padding-left: var(--space-12);
+    padding-right: var(--space-12);
+  }
+  .timeline {
+    margin-left: 4px;
+  }
+  .experience-item {
+    padding: 0 0 var(--space-48) 20px;
+  }
+  .timeline-dot {
+    left: -25px;
+  }
+  .experience-body {
+    padding: var(--space-16) 0 0;
+  }
+  .experience-body .role {
+    min-height: 0;
+    margin-bottom: var(--space-16);
+  }
+  .responsibilities {
+    font-size: 16px;
+    margin-top: var(--space-16);
+  }
+  .section-intro {
+    margin-bottom: var(--space-32);
+  }
+  .skill-card h3,
+  .highlight-card h3 {
+    min-height: 0;
+  }
+  .skills {
+    padding-bottom: var(--space-48);
+  }
+  .highlights {
+    padding-top: var(--space-48);
+  }
+  .degree {
+    gap: var(--space-16);
+  }
+  .degree h3 {
+    font-size: 22px;
+  }
+  .certifications li {
+    flex-wrap: wrap;
+  }
+  .certifications small {
+    margin-left: 30px;
+  }
+  .contact h2 {
+    font-size: 44px;
+  }
+  .footer-inner {
+    gap: var(--space-12);
+  }
+  .footer-inner > span {
+    line-height: 1.5;
+  }
+}
+@media (max-width: 480px) {
+  .hero-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-12);
+  }
+  .hero-buttons .button {
+    padding: 0 12px;
+  }
+  .hero-buttons .text-button {
+    grid-column: 1 / -1;
+    justify-self: start;
+  }
+  .contact-buttons .button {
+    flex: 1 1 auto;
+  }
+  .contact-buttons .text-button {
+    flex-basis: 100%;
+  }
+}
+
+/* La silueta forma parte del hero; la transparencia original se conserva. */
+.hero-portrait {
+  width: min(100%, 420px);
+  margin: 24px 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  overflow: visible;
+}
+.hero-portrait img {
+  aspect-ratio: 1150 / 1368;
+  object-fit: contain;
+  mask-image: linear-gradient(to bottom, #000 76%, transparent 100%);
+}
+.hero-portrait::after {
+  display: none;
+}
+.hero-portrait .industrial-note {
+  left: 16px;
+  right: 0;
+  bottom: 0;
+  border-top: 0;
+  padding: 0;
+  color: #e6edf0;
+}
+.hero-portrait .industrial-note strong {
+  color: #fff;
+}
+.hero-copy {
+  padding-top: 48px;
+  padding-bottom: 32px;
+}
+.hero-content {
+  min-height: 640px;
+}
+.hero {
+  min-height: 640px;
+}
+:root {
+  --muted: #3e505b;
+}
+.responsibilities {
+  font-size: 16px;
+  line-height: 1.75;
+}
+.responsibilities li {
+  margin-bottom: 14px;
+}
+.experience-body {
+  padding-right: 28px;
+}
+.metric p {
+  font-size: 45px;
+}
+.metric-1 p,
+.metric-3 p {
+  font-size: 24px;
+}
+.education-grid {
+  align-items: stretch;
+  gap: 32px;
+}
+.education-block,
+.certifications {
+  padding: 24px;
+  border: 1px solid #dfe3df;
+  border-radius: 12px;
+  background: #ffffffb3;
+}
+.education .eyebrow {
+  margin-bottom: 24px;
+}
+.education-heading {
+  margin-bottom: 24px;
+}
+.degree {
+  gap: 16px;
+}
+.degree-icon {
+  width: 48px;
+  height: 52px;
+  background: #f1eee6;
+}
+.certifications li {
+  padding: 14px 0;
+}
+.certifications li > svg {
+  width: 21px;
+  height: 21px;
+  color: #966021;
+}
+.certifications li:last-child {
+  padding-bottom: 0;
+}
+@media (min-width: 768px) and (max-width: 1399px) {
+  .timeline {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 48px 40px;
+  }
+  .experience-body .role {
+    min-height: 0;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hero-portrait {
+    width: 100%;
+  }
+  .hero-content {
+    padding-bottom: 112px;
+  }
+  .education-block,
+  .certifications {
+    padding: 20px;
+  }
+}
+@media (max-width: 767px) {
+  .hero,
+  .hero-content {
+    min-height: 0;
+  }
+  .hero-content {
+    padding-top: 40px;
+    padding-bottom: 96px;
+  }
+  .hero-copy {
+    padding: 0;
+  }
+  .hero-subtitle {
+    margin: 20px 0;
+  }
+  .hero-buttons {
+    margin-top: 24px;
+  }
+  .hero-contact {
+    margin-top: 16px;
+  }
+  .hero-portrait {
+    width: min(100%, 280px);
+    margin: 16px 0 8px;
+  }
+  .hero-portrait .industrial-note {
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  .metric p {
+    font-size: 40px;
+  }
+  .metric-1 p,
+  .metric-3 p {
+    font-size: 20px;
+  }
+  .experience-body {
+    padding-right: 0;
+  }
+  .education-block,
+  .certifications {
+    padding: 24px 20px;
+  }
+  .degree {
+    flex-wrap: wrap;
+  }
+}
+
+/* Marcas originales normalizadas; iconos Lucide con un trazo compartido. */
+.company-logo {
+  display: block;
+  width: 180px;
+  height: 56px;
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+.company-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: left center;
+}
+.icon {
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+.button .icon,
+.text-button .icon {
+  width: 18px;
+  height: 18px;
+}
+.button .icon-diagonal,
+.text-button .icon-diagonal {
+  width: 16px;
+  height: 16px;
+}
+.hero-contact .icon {
+  width: 17px;
+  height: 17px;
+}
+.menu-toggle .icon {
+  width: 23px;
+  height: 23px;
+}
+.metric > .icon {
+  width: 28px;
+  height: 28px;
+  color: #a45f26;
+}
+.skill-card .card-top > .icon,
+.highlight-card .card-top > .icon:first-child {
+  width: 30px;
+  height: 30px;
+}
+.skill-card li .icon,
+.credential .icon {
+  width: 16px;
+  height: 16px;
+}
+.skill-card li .icon {
+  margin-top: 5px;
+}
+.highlight-card .card-top > .icon:last-child {
+  width: 20px;
+  height: 20px;
+  opacity: 0.7;
+}
+.degree-icon .icon {
+  width: 28px;
+  height: 28px;
+}
+.certifications li > .icon {
+  width: 22px;
+  height: 22px;
+}
+.contact-row > .icon:first-child {
+  width: 24px;
+  height: 24px;
+  color: #966021;
+}
+.contact-row > .icon:last-child:not(:first-child) {
+  width: 18px;
+  height: 18px;
+}
+.contact-details {
+  align-self: center;
+}
+@media (max-width: 767px) {
+  .company-logo {
+    margin-bottom: 16px;
+  }
+  .metric > .icon {
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin-top: 5px;
+  }
+  .metric {
+    gap: 8px;
+  }
+}
+@media (max-width: 390px) {
+  .metric {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .metric > .icon {
+    margin: 0;
   }
 }

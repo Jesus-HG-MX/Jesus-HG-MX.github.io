@@ -5,8 +5,6 @@ export const siteConfig = {
   subtitle: "Líder de Manufactura | Ingeniero Industrial",
   siteUrl: "https://jesus-hg-mx.github.io/",
   email: "gabon1250@gmail.com",
-  phone: "22 12 69 06 80",
-  phoneHref: "tel:+522212690680",
   location: "Puebla, México",
   linkedin: "https://www.linkedin.com/in/gabriel8925/",
   cv: "/cv/Jesus_Gabriel_Hernandez_Gutierrez_CV.pdf",
