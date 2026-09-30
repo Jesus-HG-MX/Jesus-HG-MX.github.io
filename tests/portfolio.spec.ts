@@ -10,6 +10,10 @@ for (const width of [360, 390, 430, 768, 1024, 1200, 1440]) {
     await page.goto("/");
     await page.evaluate(() => document.fonts.ready);
     await expect(page.locator("h1")).toHaveCount(1);
+    await expect(page.getByRole("heading", { name: "Klumex" })).toBeVisible();
+    await expect(
+      page.getByText("2026 – Actualidad", { exact: true }),
+    ).toBeVisible();
     expect(
       await page.evaluate(
         () => document.documentElement.scrollWidth <= window.innerWidth,
@@ -50,19 +54,44 @@ for (const width of [360, 390, 430, 768, 1024, 1200, 1440]) {
       "Jesus_Gabriel_Hernandez_Gutierrez_CV.pdf",
     );
     expect(await download.failure()).toBeNull();
+    const logos = page.locator(".company-logo img");
+    await expect(logos).toHaveCount(5);
+    for (const logo of await logos.all()) {
+      await logo.scrollIntoViewIfNeeded();
+      await expect
+        .poll(() =>
+          logo.evaluate((image: HTMLImageElement) => image.naturalWidth),
+        )
+        .toBeGreaterThan(0);
+    }
+    await page
+      .locator('img[loading="lazy"]')
+      .evaluateAll((images) =>
+        images.forEach(
+          (image) => ((image as HTMLImageElement).loading = "eager"),
+        ),
+      );
+    await page
+      .locator("img")
+      .evaluateAll((images) =>
+        Promise.all(
+          images.map((image) => (image as HTMLImageElement).decode()),
+        ),
+      );
     const images = await page
       .locator("img")
       .evaluateAll((imgs) =>
         imgs.every((img) => img.complete && img.naturalWidth > 0),
       );
     expect(images).toBeTruthy();
-    const logos = page.locator(".company-logo img");
-    await expect(logos).toHaveCount(4);
     expect(
       await logos.evaluateAll((images) =>
         images.every((image) => {
-          const box = image.getBoundingClientRect();
-          return box.width === 180 && box.height === 56;
+          const box =
+            image.parentElement!.parentElement!.getBoundingClientRect();
+          const featured = image.closest(".experience-current") !== null;
+          return box.width === (featured ? 198 : 180) &&
+            box.height === (featured ? 62 : 56);
         }),
       ),
     ).toBeTruthy();
@@ -77,6 +106,8 @@ test("SEO, static content, links and reduced motion", async ({
   const response = await request.get("/");
   const html = await response.text();
   expect(html).toContain("Experiencia Profesional");
+  expect(html).toContain("Klumex");
+  expect(html).toContain("Seguimiento a capacitación y matriz ILUO.");
   expect(html).toContain("application/ld+json");
   await page.goto("/");
   await expect(page).toHaveTitle(

@@ -49,6 +49,20 @@ export const copy = {
   ],
   experience: [
     {
+      date: "2026 – Actualidad",
+      company: "Klumex",
+      role: "Supervisor de Producción",
+      description: [
+        "Supervisión de personal operativo.",
+        "Ajuste de parámetros de proceso.",
+        "Distribución de actividades y aseguramiento de cobertura operativa.",
+        "Seguimiento a capacitación y matriz ILUO.",
+        "Identificación de oportunidades de mejora.",
+        "Estandarización de procesos.",
+      ],
+      tags: [],
+    },
+    {
       date: "2025 – 2026",
       company: "INNOFA de México",
       role: "Supervisor de Producción",
